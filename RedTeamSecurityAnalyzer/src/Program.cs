@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
+using RedTeamSecurityAnalyzer.Configuration;
+using RedTeamSecurityAnalyzer.Extensions;
 using RedTeamSecurityAnalyzer.Logging;
 using Serilog;
 
-"RedTeam".WriteApplicationLogo(new RedTeam.Extensions.Console.Fonts.TubesSmushed());
+
 
 var logFile = "..\\..\\..\\RedTeamSecurityAnalyzer.log";
 var htmlLogFile = "..\\..\\..\\RedTeamSecurityAnalyzer.html";
@@ -22,10 +24,12 @@ Log.Logger = new LoggerConfiguration()
 
 CommandApp.CreateCommandAppBuilder(args, (ConfigurationSettings s) =>
 {
-
+    s.Configuration.AddApplicationAndRuleConfiguration();
     s.Host.UseSerilog(Log.Logger, dispose: true);
     s.Configuration.AddUserSecrets<Program>();
     s.Services.AddRedTeamSecurityAnalyzer();
+    s.Services.Configure<SecurityAnalysisTestCasesConfiguration>(s.Configuration);
+    s.Services.Configure<ApplicationTestCasesConfiguration>(s.Configuration);
 })
     .RegisterRedTeamSecurityAnalyzerCommandHandlers()
     .Run();

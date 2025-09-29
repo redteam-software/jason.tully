@@ -57,6 +57,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
 
     public async Task RunAsync(SecurityAuditCommandParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
+        $"RedTeam.{args.application}".WriteApplicationLogo(new RedTeam.Extensions.Console.Fonts.TubesSmushed());
         $"{CommandName.Information()} - {CommandDescription} ({args.application})".WriteSubTitle(false);
         _logger.LogInformation("Starting Security Audit Command for {application}", args.application);
         var upn = Upn.Create(args.username, args.password, _configuration);
@@ -128,8 +129,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
         var (totalRules, totalTestCases, metrics) = testSummary;
 
 
-        _logger.LogInformation("Completed Security Audit Command.  Total {total}",
-            totalRules);
+        _logger.LogInformation("Completed Security Audit Command.");
 
         var summaryBuilder = new StringBuilder();
 

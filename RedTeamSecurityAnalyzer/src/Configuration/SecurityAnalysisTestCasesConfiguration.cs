@@ -5,9 +5,15 @@ public class RedTeamApplicationConfiguration
     public List<SecurityAnalysisTestConfiguration> Tests { get; set; } = new List<SecurityAnalysisTestConfiguration>();
 }
 
+public class ApplicationTestCasesConfiguration
+{
+    public const string SectionName = "Applications";
+    public Dictionary<string, RedTeamApplicationConfiguration> Applications { get; set; } = new Dictionary<string, RedTeamApplicationConfiguration>();
+}
+
 public class SecurityAnalysisTestCasesConfiguration
 {
-    public Dictionary<string, RedTeamApplicationConfiguration> Applications { get; set; } = new Dictionary<string, RedTeamApplicationConfiguration>();
+    public const string SectionName = "Rules";
     public List<SecurityAnalysisRuleConfiguration> Rules { get; set; } = new List<SecurityAnalysisRuleConfiguration>();
 }
 

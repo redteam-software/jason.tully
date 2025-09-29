@@ -1,5 +1,8 @@
 ﻿namespace RedTeamSecurityAnalyzer.Models;
 
+/// <summary>
+/// Test result status codes for security analysis.
+/// </summary>
 public enum SecurityAnalysisStatus
 {
     Passed = 200,

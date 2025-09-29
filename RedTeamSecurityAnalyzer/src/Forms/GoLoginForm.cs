@@ -89,7 +89,7 @@ public class GoLoginForm(IPuppeteerService puppeteerService) : ILoginForm
 
     private async Task<GoLoginButton> GetGoLoginButton(IPage page, RedTeamSecurityAnalysisTestCase testCase)
     {
-        var backDoorUser = testCase.PropertiesTo<BackdoorUserSettings>();
+        var backDoorUser = testCase.PropertiesTo<BackdoorGoUserSettings>();
         var buttons = await GetLoginButtons(page);
         return buttons.First(x => x.Pci == backDoorUser.DataAjax &&
         x.ContactId == backDoorUser.DataRel &&

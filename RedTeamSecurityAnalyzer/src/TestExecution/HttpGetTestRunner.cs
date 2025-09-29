@@ -28,11 +28,13 @@ public class HttpGetTestRunner : AbstractTestRunner
 
             if (successStatusCode.Contains(responseCode))
             {
+                notificationService.Information($"URL Pattern: {urlPattern} Passed with status {responseCode}");
                 await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Success()} Passed.");
                 testCaseResponses.Add(new(SecurityAnalysisStatus.Passed, rule, testData, $"Pattern '{urlPattern}' Succeeded"));
             }
             else if (failureStatusCodes.Contains(responseCode))
             {
+                notificationService.Information($"URL Pattern: {urlPattern} Failed with status {responseCode}");
                 await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Error()} Failed.");
                 string? content = null;
                 if (response != null)
@@ -48,6 +50,7 @@ public class HttpGetTestRunner : AbstractTestRunner
                 {
                     content = await response.TextAsync();
                 }
+                notificationService.Information($"I don't know what to do with this response {response?.Status}.  Skipping");
                 await notificationService.NotifyAsync($"I don't know what to do with this response {response?.Status}.  Skipping");
                 testCaseResponses.Add(new(SecurityAnalysisStatus.Unknown, rule, testData, $"URL '{url}' {response?.Status}", content));
             }
@@ -68,6 +71,7 @@ public class HttpGetTestRunner : AbstractTestRunner
             var total = testCaseResponses.Count;
 
             var summary = $"Total Test Cases: {total.NumericValue()}, Passed: {passed.ToString("N0").Success()}, Failed: {failed.ToString("N0").Error()}, Not Run: {notRun.ToString("N0").Information()}, Unknown: {unknown.ToString("N0").Warning()}";
+            notificationService.Information($"Total Test Cases: {total}, Passed: {passed.ToString("N0")}, Failed: {failed.ToString("N0")}, Not Run: {notRun.ToString("N0")}, Unknown: {unknown.ToString("N0")}");
             await notificationService.NotifyAsync(summary);
         }
 
