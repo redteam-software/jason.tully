@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+	  <packageTypes>
+		<packageType name="Template" />
+	  </packageTypes>
+		<PackageVersion>1.0</PackageVersion>
+		<PackageId>RedTeam.Templates</PackageId>
+		<Title>RedTeam Starter Project Templates</Title>
+		<Authors>RedTeam</Authors>
+		<Description>C# project templates for creating RedTeam applications.</Description>
+		<PackageTags>cli</PackageTags>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<PackageOutputPath>./nuget</PackageOutputPath>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<PackageIconUrl>https://lh3.googleusercontent.com/sitesv/AICyYdaFaDn3nh1NAYxTAKyZXLMOKV2e5xNvlD5ul4jz-GL2jgnQPX-Xh-tFABhjHWS7kGXv0UIWpyxbyS0Sp30paNQal2dbAhZcXXirpodmDoD6WwT6hO16sEzUbRMIoWEtN-4zwlIVr5eFzAdI8AAOGBl5x1O3mB38B9vqQYUEcbSwcD1z69fzwpZcXCw=w16383</PackageIconUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<Version>1.0.0</Version>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<FileVersion>1.0.0</FileVersion>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+	  <Compile Remove="**\*" />
+	  <Compile Remove="nuget\**" />
+	  <EmbeddedResource Remove="nuget\**" />
+	  <None Remove="nuget\**" />
+	</ItemGroup>
+
+
+
+	<ItemGroup>
+		<Content Include="icon.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+
+</Project>

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json.schemastore.org/ide.host",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+
+  "ui": {
+    "displayName": "RedTeam Command",
+    "description": "Adds a new RedTeam Command",
+    "icon": "icon.png",
+    "group": "Code"
+  }
+
+}

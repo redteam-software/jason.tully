@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "RedTeam",
+  "classifications": [ "Code", "C#" ],
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "groupIdentity": "RedTeam.Templates.Command",
+  "identity": "RedTeam.Templates.Command.CSharp",
+  "name": "RedTeam Command",
+  "shortName": "rt-command",
+  "icon": "icon.png",
+  "symbols": {
+    "commandName": {
+      "type": "derived",
+      "valueSource": "className",
+      "valueTransform": "tolower",
+      "defaultValue": "default",
+      "replaces": "_command_"
+    },
+
+    "className": {
+      "type": "parameter",
+      "description": "The name of the code file and class.",
+      "datatype": "text",
+      "replaces": "RedTeamCommand",
+      "fileRename": "RedTeamCommand",
+      "defaultValue": "RedTeamCommand"
+    }
+
+
+  },
+  "constraints": {
+    "csharp-only": {
+      "type": "project-capability",
+      "args": "CSharp"
+    }
+  },
+  "forms": {
+    "kebabCase": {
+      "identifier": "kebabCase"
+    },
+    "invalidChars": {
+      "identifier": "replace",
+      "pattern": "([\\-_\\.\\ ])",
+      "replacement": ""
+    },
+
+    "tolower": {
+      "identifier": "lowerCaseInvariant"
+    },
+
+    "identifier": {
+      "identifier": "chain",
+      "steps": [ "invalidChars", "kebabCase", "tolower" ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>RedTeam.Templates</id>
+    <version>1.0.0</version>
+    <title>RedTeam Starter Project Templates</title>
+    <authors>RedTeam</authors>
+    <icon>icon.png</icon>
+    <iconUrl>https://lh3.googleusercontent.com/sitesv/AICyYdaFaDn3nh1NAYxTAKyZXLMOKV2e5xNvlD5ul4jz-GL2jgnQPX-Xh-tFABhjHWS7kGXv0UIWpyxbyS0Sp30paNQal2dbAhZcXXirpodmDoD6WwT6hO16sEzUbRMIoWEtN-4zwlIVr5eFzAdI8AAOGBl5x1O3mB38B9vqQYUEcbSwcD1z69fzwpZcXCw=w16383</iconUrl>
+    <description>C# project templates for creating RedTeam applications.</description>
+    <tags>cli</tags>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\.gitignore" target="content\templates\CommandApp\.gitignore" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\.template.config\dotnetcli.host.json" target="content\templates\CommandApp\.template.config\dotnetcli.host.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\.template.config\icon.png" target="content\templates\CommandApp\.template.config\icon.png" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\.template.config\ide.host.json" target="content\templates\CommandApp\.template.config\ide.host.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\.template.config\template.json" target="content\templates\CommandApp\.template.config\template.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\RedTeamCommandApp.sln" target="content\templates\CommandApp\RedTeamCommandApp.sln" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\Commands\DefaultCommandNameCommand.cs" target="content\templates\CommandApp\src\Commands\DefaultCommandNameCommand.cs" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\GlobalUsings.cs" target="content\templates\CommandApp\src\GlobalUsings.cs" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\nuget.config" target="content\templates\CommandApp\src\nuget.config" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\Program.cs" target="content\templates\CommandApp\src\Program.cs" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\ReadMe.md" target="content\templates\CommandApp\src\ReadMe.md" />
+    <file src="D:\Development\Templates\RedTeam\templates\CommandApp\src\RedTeamCommandApp.csproj" target="content\templates\CommandApp\src\RedTeamCommandApp.csproj" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\.template.config\dotnetcli.host.json" target="content\templates\Command\.template.config\dotnetcli.host.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\.template.config\icon.png" target="content\templates\Command\.template.config\icon.png" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\.template.config\ide.host.json" target="content\templates\Command\.template.config\ide.host.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\.template.config\template.json" target="content\templates\Command\.template.config\template.json" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\icon.png" target="content\templates\Command\icon.png" />
+    <file src="D:\Development\Templates\RedTeam\templates\Command\RedTeamCommand.cs" target="content\templates\Command\RedTeamCommand.cs" />
+    <file src="D:\Development\Templates\RedTeam\icon.png" target="content\icon.png" />
+    <file src="D:\Development\Templates\RedTeam\icon.png" target="\icon.png" />
+  </files>
+</package>

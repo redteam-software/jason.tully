@@ -1,0 +1,11 @@
+D:\Development\Templates\RedTeam\bin\Release\netstandard2.0\icon.png
+D:\Development\Templates\RedTeam\bin\Release\netstandard2.0\RedTeam.Templates.deps.json
+D:\Development\Templates\RedTeam\bin\Release\netstandard2.0\RedTeam.Templates.dll
+D:\Development\Templates\RedTeam\bin\Release\netstandard2.0\RedTeam.Templates.pdb
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.csproj.AssemblyReference.cache
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.GeneratedMSBuildEditorConfig.editorconfig
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.AssemblyInfoInputs.cache
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.AssemblyInfo.cs
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.csproj.CoreCompileInputs.cache
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.dll
+D:\Development\Templates\RedTeam\obj\Release\netstandard2.0\RedTeam.Templates.pdb

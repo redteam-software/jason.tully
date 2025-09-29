@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "RedTeam",
+  "classifications": [ "Code", "C#" ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "groupIdentity": "RedTeam.Templates.CliApp",
+  "identity": "RedTeam.Templates.CliApp.CSharp",
+  "name": "RedTeam CLI",
+  "sourceName": "RedTeamCommandApp",
+  "preferNameDirectory": true,
+  "shortName": "rt-cli",
+  "icon": "icon.png",
+  "symbols": {
+
+    "renameFileParameter": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "invalidChars",
+      "defaultValue": "Default",
+      "replaces": "FileToRename",
+      "fileRename": "FileToRename"
+    },
+    "command": {
+      "type": "parameter",
+      "defaultValue": "Default",
+      "replaces": "DefaultCommandName",
+      "description": "the default command to create",
+      "fileRename": "DefaultCommandName"
+    },
+    "commandName": {
+      "type": "derived",
+      "valueSource": "command",
+      "valueTransform": "tolower",
+      "defaultValue": "default",
+      "replaces": "DefaultCommandNameName"
+    }
+  },
+  "forms": {
+    "kebabCase": {
+      "identifier": "kebabCase"
+    },
+    "invalidChars": {
+      "identifier": "replace",
+      "pattern": "([\\-_\\.\\ ])",
+      "replacement": ""
+    },
+
+    "tolower": {
+      "identifier": "lowerCaseInvariant"
+    },
+
+    "identifier": {
+      "identifier": "chain",
+      "steps": [ "invalidChars", "kebabCase", "tolower" ]
+    }
+  }
+}

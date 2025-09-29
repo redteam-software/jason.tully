@@ -1,0 +1,256 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Development\\Templates\\RedTeam\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\command\\working\\content\\.template.config\\ide.host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\command\\working\\content\\.template.config\\ide.host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\command\\working\\content\\.template.config\\dotnetcli.host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\command\\working\\content\\.template.config\\dotnetcli.host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\command\\working\\content\\redteamcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\command\\working\\content\\redteamcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\command\\working\\content\\.template.config\\template.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\command\\working\\content\\.template.config\\template.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\redteamcommandapp.sln||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\redteamcommandapp.sln||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\commands\\defaultcommandnamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\commands\\defaultcommandnamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\nuget.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\templates\\commandapp\\src\\redteamcommandapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:templates\\commandapp\\src\\redteamcommandapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\redteam.templates.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:redteam.templates.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|d:\\development\\templates\\redteam\\local-build.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{F4BD2332-5A0B-489F-A9AF-99DDD6B24C55}|RedTeam.Templates.csproj|solutionrelative:local-build.ps1||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dotnetcli.host.json",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\dotnetcli.host.json",
+              "RelativeDocumentMoniker": "templates\\Command\\working\\content\\.template.config\\dotnetcli.host.json",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\dotnetcli.host.json",
+              "RelativeToolTip": "templates\\Command\\working\\content\\.template.config\\dotnetcli.host.json",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-19T18:26:46.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ide.host.json",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\ide.host.json",
+              "RelativeDocumentMoniker": "templates\\Command\\working\\content\\.template.config\\ide.host.json",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\ide.host.json",
+              "RelativeToolTip": "templates\\Command\\working\\content\\.template.config\\ide.host.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-19T18:25:09.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReadMe.md",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\ReadMe.md",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\ReadMe.md",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\ReadMe.md",
+              "RelativeToolTip": "templates\\CommandApp\\src\\ReadMe.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-09-19T18:24:51.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RedTeamCommand.cs",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\RedTeamCommand.cs",
+              "RelativeDocumentMoniker": "templates\\Command\\working\\content\\RedTeamCommand.cs",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\RedTeamCommand.cs",
+              "RelativeToolTip": "templates\\Command\\working\\content\\RedTeamCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T14:33:57.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "template.json",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\template.json",
+              "RelativeDocumentMoniker": "templates\\Command\\working\\content\\.template.config\\template.json",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\Command\\working\\content\\.template.config\\template.json",
+              "RelativeToolTip": "templates\\Command\\working\\content\\.template.config\\template.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-19T14:31:11.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RedTeamCommandApp.sln",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\RedTeamCommandApp.sln",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\RedTeamCommandApp.sln",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\RedTeamCommandApp.sln",
+              "RelativeToolTip": "templates\\CommandApp\\RedTeamCommandApp.sln",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002855|",
+              "WhenOpened": "2025-09-19T14:22:34.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ReadMe.md",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\ReadMe.md",
+              "RelativeDocumentMoniker": "ReadMe.md",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\ReadMe.md",
+              "RelativeToolTip": "ReadMe.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-09-19T13:36:13.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RedTeamCommandApp.csproj",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\RedTeamCommandApp.csproj",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\RedTeamCommandApp.csproj",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\RedTeamCommandApp.csproj",
+              "RelativeToolTip": "templates\\CommandApp\\src\\RedTeamCommandApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-19T13:26:33.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "local-build.ps1",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\local-build.ps1",
+              "RelativeDocumentMoniker": "local-build.ps1",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\local-build.ps1",
+              "RelativeToolTip": "local-build.ps1",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-19T13:20:53.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "nuget.config",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\nuget.config",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\nuget.config",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\nuget.config",
+              "RelativeToolTip": "templates\\CommandApp\\src\\nuget.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-19T13:14:27.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GlobalUsings.cs",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\GlobalUsings.cs",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\GlobalUsings.cs",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\GlobalUsings.cs",
+              "RelativeToolTip": "templates\\CommandApp\\src\\GlobalUsings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T13:13:58.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DefaultCommandNameCommand.cs",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\Commands\\DefaultCommandNameCommand.cs",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\Commands\\DefaultCommandNameCommand.cs",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\Commands\\DefaultCommandNameCommand.cs",
+              "RelativeToolTip": "templates\\CommandApp\\src\\Commands\\DefaultCommandNameCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T13:10:28.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\Program.cs",
+              "RelativeDocumentMoniker": "templates\\CommandApp\\src\\Program.cs",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\templates\\CommandApp\\src\\Program.cs",
+              "RelativeToolTip": "templates\\CommandApp\\src\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T13:10:20.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RedTeam.Templates.csproj",
+              "DocumentMoniker": "D:\\Development\\Templates\\RedTeam\\RedTeam.Templates.csproj",
+              "RelativeDocumentMoniker": "RedTeam.Templates.csproj",
+              "ToolTip": "D:\\Development\\Templates\\RedTeam\\RedTeam.Templates.csproj",
+              "RelativeToolTip": "RedTeam.Templates.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-19T13:08:33.928Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
