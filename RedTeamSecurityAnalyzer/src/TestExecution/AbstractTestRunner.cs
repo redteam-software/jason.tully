@@ -26,7 +26,7 @@ public abstract class AbstractTestRunner : ITestRunner
             {
 
                 var form = testRunnerContext.LoginFormFactory.GetLoginForm(testRunnerContext.Application);
-                var response = await form.LoginAsync(testRunnerContext.Upn!.Username, testRunnerContext.Upn.Password, testRunnerContext.NotificationService);
+                var response = await form.LoginAsync(test, testRunnerContext.Upn!.Username, testRunnerContext.Upn.Password, testRunnerContext.NotificationService);
                 if (response.IsSuccess)
                 {
                     testRunnerContext.NotificationService.Information($"Successfully authenticated to {test.BaseUrl} as {upn?.Username}.  Frames: {response.Page!.Frames.Count()}");

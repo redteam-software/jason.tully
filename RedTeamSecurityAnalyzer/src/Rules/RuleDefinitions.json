@@ -24,7 +24,10 @@
               "input[name='bid_id']": "",
               "input[name='project_id']": "",
               "input[name='rfp_description']": ""
-            }
+            },
+            "DataAjax": 370,
+            "DataId": 1,
+            "DataRel" :  1
           }
         }
       ]

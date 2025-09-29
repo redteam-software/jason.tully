@@ -10,6 +10,7 @@ using RedTeamSecurityAnalyzer.TestExecution;
 using Spectre.Console;
 using System.Collections.Concurrent;
 using System.Text;
+using static RedTeamSecurityAnalyzer.Services.NotificationServiceExtensions;
 
 namespace SecurityAuditCommand.Commands;
 
@@ -25,7 +26,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
     public const string CommandName = "analyze";
     public const string CommandDescription = "Audits a RedTeam app for path traversal vulnerabilities";
 
-    private readonly IApplicationBrowserService _goBrowserService;
+    private readonly IPuppeteerService _puppeteerService;
     private readonly ILoginFormFactory _loginFormFactory;
     private readonly IConfiguration _configuration;
     private readonly ITestRunnerFactory _testRunnerFactory;
@@ -35,7 +36,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
     private readonly DefaultCommandReport _securityAuditReportGenerator;
 
     public SecurityAuditCommandCommand(
-        IApplicationBrowserService goBrowserService,
+        IPuppeteerService puppeteerService,
         ILoginFormFactory loginFormFactory,
         IConfiguration configuration,
         ITestRunnerFactory testRunnerFactory,
@@ -44,7 +45,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
         ILogger<SecurityAuditCommandCommand> logger,
         DefaultCommandReport securityAuditReportGenerator)
     {
-        _goBrowserService = goBrowserService;
+        _puppeteerService = puppeteerService;
         _loginFormFactory = loginFormFactory;
         _configuration = configuration;
         _testRunnerFactory = testRunnerFactory;
@@ -67,7 +68,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
             return;
         }
 
-        var browser = await _goBrowserService.GetBrowser();
+        var browser = await _puppeteerService.GetBrowser(false, EmptyNotificationService.Default);
 
         var taskDescriptionColumn = new TaskDescriptionColumn();
         taskDescriptionColumn.Alignment = Justify.Left;
@@ -101,6 +102,7 @@ public class SecurityAuditCommandCommand : ICommand<SecurityAuditCommandParamete
                     var task = ctx.AddTask($"{testCase.t.Name} [yellow]{testCase.r.Name}[/]").InitializeTask("Initialized Test Runner" + testCase.t.TestRunner);
                     task.MaxValue = 1;
                     var progressTaskNotification = new ProgressTaskNotificationService(task, _loggerFactory);
+
                     var results = await testRunner.ExecuteAsync(testCase.t, new TestRunnerContext(RedTeamApplication.Go, progressTaskNotification, _loginFormFactory, browser, upn, null));
                     task.Increment(1);
                     task.StopTask();

@@ -7,7 +7,7 @@ public record GoLoginButton(string Pci, string ContactId, string DsCntCti, strin
 [RegisterSingleton<ILoginForm>(Duplicate = DuplicateStrategy.Append, ServiceKey = RedTeamApplication.Go)]
 public class GoLoginForm(IPuppeteerService puppeteerService) : ILoginForm
 {
-    public async Task<LoginResponse> LoginAsync(string username, string password, INotificationService notificationService)
+    public async Task<LoginResponse> LoginAsync(RedTeamSecurityAnalysisTestCase testCase, string username, string password, INotificationService notificationService)
     {
         try
         {
@@ -43,7 +43,9 @@ public class GoLoginForm(IPuppeteerService puppeteerService) : ILoginForm
             var devlogins = await page.GoToAsync("https://go.redteam.com/manager/product/dev_logins.cfm");
             await notificationService.NotifyAsync($"Navigated  to {devlogins.Url.TextValue(true)}.");
 
-            var loginButton = await GetGoLoginButton(page, "370", "1");
+
+            var loginButton = await GetGoLoginButton(page, testCase);
+            notificationService.Information($"Found backdoor login button with pci {loginButton.Pci}, contactid {loginButton.ContactId}, dscntcti {loginButton.DsCntCti}, companyId {loginButton.CompanyId}");
             page = await ExecuteBackdoorLoginAsync(page, browser, loginButton, notificationService);
             return new(devlogins, page);
         }
@@ -85,10 +87,13 @@ public class GoLoginForm(IPuppeteerService puppeteerService) : ILoginForm
         return newPage;
     }
 
-    private async Task<GoLoginButton> GetGoLoginButton(IPage page, string pci, string contactId)
+    private async Task<GoLoginButton> GetGoLoginButton(IPage page, RedTeamSecurityAnalysisTestCase testCase)
     {
+        var backDoorUser = testCase.PropertiesTo<BackdoorUserSettings>();
         var buttons = await GetLoginButtons(page);
-        return buttons.First(x => x.Pci == pci && x.ContactId == contactId);
+        return buttons.First(x => x.Pci == backDoorUser.DataAjax &&
+        x.ContactId == backDoorUser.DataRel &&
+        x.CompanyId == backDoorUser.DataId);
     }
     /// <summary>
     /// retrieves all GoLoginButton elements from the provided page.

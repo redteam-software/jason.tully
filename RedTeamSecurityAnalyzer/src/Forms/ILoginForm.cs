@@ -7,5 +7,5 @@ public record LoginResponse(IResponse? Response, IPage? Page)
 
 public interface ILoginForm
 {
-    Task<LoginResponse> LoginAsync(string username, string password, INotificationService notificationService);
+    Task<LoginResponse> LoginAsync(RedTeamSecurityAnalysisTestCase testCase, string username, string password, INotificationService notificationService);
 }

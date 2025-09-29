@@ -48,7 +48,10 @@ This files contains test cases for each of the WAF rules defined in AWS and the 
                      "input[name='bid_id']": "",
                      "input[name='project_id']": "",
                      "input[name='rfp_description']": ""
-                   }
+                   },
+                   "DataAjax": 370,
+                    "DataId": 1,
+                   "DataRel" :  1
                 }
 			]
 		}
@@ -83,6 +86,12 @@ The test will attempt to submit form data with path traversal patterns and check
 Test runner abstracations exists to handle different types of tests, such as FormData, URL parameters, and JSON payloads.  They are defined as keyed dependencies referenced by a string.  In this case, the "FormData" runner is used to execute this test.
 
 Authentication is provided by an ILoginForm implementation in conjunction with the form values provided in the Properties dictionary.  
-Once we migrate to unified login, this will not be needed.
+```
+  "DataAjax": 370,
+   "DataId": 1,
+   "DataRel" :  1
+```
+These values correspond the the data- html attributes on the links in https://go.redteam.com/manager/product/dev_logins.cfm
+
 
 ILoginForms use a keyed dependency based on the application name.
