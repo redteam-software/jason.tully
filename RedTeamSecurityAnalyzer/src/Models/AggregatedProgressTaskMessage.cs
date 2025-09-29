@@ -1,0 +1,4 @@
+﻿using RedTeam.Extensions.Console.Models;
+
+namespace RedTeamSecurityAnalyzer.Models;
+public record AggregatedProgressTaskMessage(ProgressTaskMessage ProgressTaskMessage, SecurityAnalysisStatusMessage SecurityAnalysisStatusMessag);

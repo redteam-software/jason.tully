@@ -1,0 +1,942 @@
+{
+  "Applications": {
+    "Go": {
+      "Tests": [
+        {
+          "Name": "Go Path Traversal",
+          "Runner": "HttpGet",
+          "Enabled": true,
+          "BaseUrl": "https://cfdev.go.redteam.com/uatcode/inprogress/change_order.cfm?bidid={pattern}",
+          "Rules": [ "Basic", "URLEncoded", "NullBytes", "Advanced", "ColdFusion", "Unicode","HTMLEntities" ]
+        },
+        {
+          "Name": "Go Path Traversal - Forms",
+          "Runner": "FormData",
+          "Enabled": true,
+          "BaseUrl": "https://cfdev.go.redteam.com/uatcode/inprogress/createrfp.cfm?bidid=1356&rfptype=L",
+          "Rules": [ "FormData" ],
+          "RequiresAuthentication": true,
+          "Properties": {
+            "FormSelector": "form[id='rfpadd']",
+            "FormName": "createrfp.cfm",
+            "FormSubmitButton": "input[name='saverfp']",
+            "FormKeys": {
+              "input[name='bid_id']": "",
+              "input[name='project_id']": "",
+              "input[name='rfp_description']": ""
+            }
+          }
+        }
+      ]
+    }
+  },
+  "Rules": [
+    {
+      "ID": 1,
+      "RequiresAuthentication": false,
+      "Name": "Basic",
+      "Description": "Basic Path Traversal attempts using ../ and ..\\ sequences.",
+      "TestData": [
+        {
+          "Pattern": "../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 105,
+      "Name": "Advanced",
+      "Description": "Complex normalization bypass",
+      "TestData": [
+        {
+          "Pattern": "....//",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": ".....\\\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......//",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "....\\/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......\\\\\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "....//admin.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......\\\\cfide\\login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "...../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": ".....\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......./",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "...../admin.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "......\\cfide\\login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": ".....\\..\\..\\cfusion\\admin",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "././../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "././../admin.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "./././../cfide/login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "././../cfusion/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "././../..\\admin",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "././../secret\\file.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 106,
+      "Name": "ColdFusion",
+      "Description": "CF-specific patterns (.cfm, cfide, administrator)",
+      "TestData": [
+        {
+          "Pattern": "../admin.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfide\\login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\..\\hidden\\exploit.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfusion/administrator.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfide.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../some/path/trick.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\deep\\path\\file.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfide",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfide",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../admin/cfide",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\..\\cfide\\login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfusion/cfide",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfide\\administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../some/path/cfide",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\deep\\cfide\\file.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfide/administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\..\\cfide\\administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfusion/administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfide\\administrator\\login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../some/path/administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\deep\\admin\\administrator",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 110,
+
+      "Name": "FormData",
+      "Description": " Path traversal patterns commonly used in form data contexts.",
+      "TestData": [
+        {
+          "Pattern": "../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ],
+          "ReferencesRules": [ "Basic", "ColdFusion", "NullBytes", "HTMLEntities", "Advanced" ]
+        }
+      ]
+    },
+    {
+      "ID": 103,
+      "Name": "HTMLEntities",
+      "Description": "HTML Entities - Using HTML entity encoding to bypass filters",
+      "TestData": [
+        {
+          "Pattern": "&#46;&#46;&#47;",
+          "Description": "../ using decimal",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&#x2e;&#x2e;&#x2f;",
+          "Description": "../ using lowercase hex",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&#x2E;&#x2E;&#x2F;",
+          "Description": "../ using uppercase hex",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&period;&period;&sol;",
+          "Description": "../ using named entities",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "prefix&#46;&#46;&#47;",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin&#x2e;&#x2e;&#x2f;",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide&period;&period;&sol;",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&#46;&#46;&#92;",
+          "Description": "..\\ using decimal",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&#x2e;&#x2e;&#x5c;",
+          "Description": "..\\ using lowercase hex",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&#x2E;&#x2E;&#x5C;",
+          "Description": "..\\ using uppercase hex",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&period;&period;&#92;",
+          "Description": "mixed named + decimal",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "&period;&period;&#x5c;",
+          "Description": "mixed named + hex",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "prefix&#46;&#46;&#92;",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin&#x2e;&#x2e;&#x5c;",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide&period;&period;&#x5C",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 108,
+      "Name": "MultiStage",
+      "Description": "Detects multi-stage encoded path traversal attempts.",
+      "TestData": [
+        {
+          "Pattern": "../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "\\..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide\\..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfusion\\admin",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfide/login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "\\..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/../",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide\\..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..\\cfusion\\admin",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../cfide/login.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 7,
+      "Name": "NullBytes",
+      "Description": "Using null byte (%00) to bypass filters",
+      "TestData": [
+        {
+          "Pattern": "..%00/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..%00\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/..%00/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "\\..%00\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/..%00/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide\\..%00\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "../..%00/",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..%00\\secret",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "..%00\\..\\",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": ".%00.",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "file.%00.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin.%00.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide.%00.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "exploit.%00.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "path/to/file.%00.cfm",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u0000\"",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"prefix\\u0000\"",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u0000suffix\"",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"path\\to\\u0000file\"",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u0000\\u0000\"",
+          "Description": "",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 102,
+      "Name": "Unicode",
+      "Description": "Using Unicode encoding to bypass filters",
+      "TestData": [
+        {
+          "Pattern": "@\"\\u002e\\u002e\\u002f\"",
+          "Description": "../",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u002E\\u002E\\u002F\"",
+          "Description": "../ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u002e\\u002e\\u005c\"",
+          "Description": "..\\",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u002E\\u002E\\u005C\"",
+          "Description": "..\\ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"prefix\\u002e\\u002e\\u002f\"",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u002e\\u002e\\u002fadmin\"",
+          "Description": "trailing path",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "@\"\\u002e\\u002e\\u005csecret\"",
+          "Description": "trailing path",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%c0%ae%c0%ae%c0%af",
+          "Description": "../ overlong UTF-8",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%C0%AE%C0%AE%C0%AF",
+          "Description": "../ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%c0%ae%c0%ae%c0%af",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%c0%ae%c0%ae%c0%af",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%C0%AE%C0%AE%C0%AF",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%ef%bc%8e%ef%bc%8e%ef%bc%8f",
+          "Description": "fullwidth ../",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%EF%BC%8E%EF%BC%8E%EF%BC%8F",
+          "Description": "uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%ef%bc%8e%ef%bc%8e%ef%bc%8f",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%ef%bc%8e%ef%bc%8e%ef%bc%8f",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%EF%BC%8E%EF%BC%8E%EF%BC%8F",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%uff0e%uff0e%uff0f",
+          "Description": "fullwidth ../",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%UFF0E%UFF0E%UFF0F",
+          "Description": "uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%uff0e%uff0e%uff0f",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%uff0e%uff0e%uff0f",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%UFF0E%UFF0E%UFF0F",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    },
+    {
+      "ID": 101,
+      "Name": "URLEncoded",
+      "Description": "Using URL encoding to bypass filters",
+      "TestData": [
+        {
+          "Pattern": "%2e%2e%2f",
+          "Description": "../",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%2E%2E%2F",
+          "Description": "../ (uppercase)",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%2e%2e%5c",
+          "Description": "..\\",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%2E%2E%5C",
+          "Description": "..\\",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%2e%2e%2f",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "\\%2E%2E%5C",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%2e%2e%2f",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%2E%2E%5C",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%252e%252e%252f",
+          "Description": "../ double-encoded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%252E%252E%252F",
+          "Description": "../ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%252e%252e%255c",
+          "Description": "..\\ double-encoded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%252E%252E%255C",
+          "Description": "..\\ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%252e%252e%252f",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "\\%252E%252E%255C",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%252e%252e%252f",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%252E%252E%255C",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%25252e%25252e%25252f",
+          "Description": "../ triple-encoded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "%25252E%25252E%25252F",
+          "Description": "../ uppercase",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "/%25252e%25252e%25252f",
+          "Description": "prefixed",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "admin/%25252e%25252e%25252f",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        },
+        {
+          "Pattern": "cfide%25252E%25252E%25252F",
+          "Description": "embedded",
+          "SuccessStatusCodes": [ 403 ],
+          "FailureStatusCodes": [ 200, 500 ]
+        }
+      ]
+    }
+  ]
+
+}

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RedTeamSecurityAnalyzer": {
+      "commandName": "Project",
+      "commandLineArgs": "analyze go"
+    }
+  }
+}

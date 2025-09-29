@@ -1,0 +1,56 @@
+## Build artifacts
+bin/
+obj/
+out/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code settings
+.vscode/
+
+## Visual Studio settings
+*.vs/
+.vs/
+
+## NuGet packages
+*.nupkg
+packages/
+*.snupkg
+
+## Logs
+*.log
+logs/
+*.log.*
+
+## Configuration transforms
+*.config
+*.config.*
+
+## Temporary files
+*.tmp
+*.bak
+*.swp
+*.orig
+
+## Resharper
+*.DotSettings.user
+.idea/
+
+## Rider
+.idea/
+*.sln.iml
+
+## Test results
+TestResults/
+*.trx
+
+## Publish output
+publish/
+wwwroot/
+
+## Auto-generated files
+Generated_Code/
