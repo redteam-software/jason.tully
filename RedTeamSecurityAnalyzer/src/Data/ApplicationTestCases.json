@@ -2,17 +2,18 @@
   "Applications": {
     "Go": {
       "Tests": [
+        
         {
           "Name": "Go Path Traversal",
           "Runner": "HttpGet",
           "Enabled": true,
           "BaseUrl": "https://cfdev.go.redteam.com/uatcode/inprogress/change_order.cfm?bidid={pattern}",
-          "Rules": [ "Basic", "URLEncoded", "NullBytes", "Advanced", "ColdFusion", "Unicode", "HTMLEntities" ]
+          "Rules": [ "Basic", "URLEncoded", "NullBytes", "Advanced", "ColdFusion", "Unicode"]
         },
         {
           "Name": "Go Path Traversal - Forms",
           "Runner": "FormData",
-          "Enabled": false,
+          "Enabled": true,
           "BaseUrl": "https://cfdev.go.redteam.com/uatcode/inprogress/createrfp.cfm?bidid=1356&rfptype=L",
           "Rules": [ "FormData" ],
           "RequiresAuthentication": true,
@@ -21,9 +22,8 @@
             "FormName": "createrfp.cfm",
             "FormSubmitButton": "input[name='saverfp']",
             "FormKeys": {
-              "input[name='bid_id']": "",
-              "input[name='project_id']": "",
-              "input[name='rfp_description']": ""
+              "input[name='rfp_description']": "",
+              "textarea[name='Item_description']": ""
             },
             "DataAjax": 370,
             "DataId": 1,

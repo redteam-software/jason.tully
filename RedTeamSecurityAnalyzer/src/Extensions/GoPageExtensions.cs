@@ -12,98 +12,106 @@ public record NavigationLink(string Id, string Name, string Url, IElementHandle 
 
 public static class GoPageExtensions
 {
-    public static async Task<IReadOnlyList<NavigationLink>> GetMenuLinksAsync(this IPage page)
+    public static IRenderable CookieParamsToTable(this IEnumerable<CookieParam> cookieParams, string title, bool border = false)
     {
-        var menuLinks = await page.QuerySelectorAllAsync(".sidenavlinks");
-        var asyncEnumerable = menuLinks.ToAsyncEnumerable();
-        var bag = new ConcurrentBag<NavigationLink>();
-        await foreach (var link in asyncEnumerable)
+        var cookieTable = new Table().AddColumns("Name", "Value").Border(border ? TableBorder.Rounded : TableBorder.None).BorderColor(Color.Grey);
+
+        var titleRule = new Rule(title);
+        titleRule.Style = new Style(foreground: Color.White, background: Color.NavyBlue);
+
+        foreach (var cookie in cookieParams)
         {
-            var id = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('data-id')");
-            var title = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('data-title')");
-            var href = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('href')");
-            if (!string.IsNullOrWhiteSpace(href))
-            {
-                bag.Add(new NavigationLink(id ?? string.Empty, title ?? string.Empty, href, link));
+            cookieTable.AddRow(cookie.Name.TextValue(true), cookie.Value.TextValue(true));
+        }
+
+        return new Rows(titleRule, cookieTable).Expand();
+    }
+
+    public static async Task<List<string>> DebugFormInputs(this IPage page)
+    {
+        var fields = await page.EvaluateFunctionAsync<List<FormInputData>>(@"
+            () => {
+                const elements = Array.from(document.querySelectorAll('input, textarea, select'));
+                return elements.map(el => ({
+                    tag: el.tagName.toLowerCase(),
+                    type: el.type || null,
+                    name: el.name || null,
+                    id: el.id || null,
+                    value: el.value || null,
+                    placeholder: el.placeholder || null
+                }));
             }
-        }
-        return bag.ToList().AsReadOnly();
-    }
+        ");
 
-    public static async Task<IEnumerable<FrameUrl>> GetAllFrameUrls(this IPage page)
+
+        return fields.Select(x => $"{x.name ?? x.id} = \"{x.value}\"").ToList();
+
+
+
+
+    }
+    public class FormInputData
     {
-        var bag = new ConcurrentBag<FrameUrl>();
+        public string? tag { get; set; }
+        public string? type { get; set; }
+        public string? name { get; set; }
+        public string? id { get; set; }
+        public string? value { get; set; }
 
-        var anchors = () => page.QuerySelectorAllAsync(".sidenavlinks");
-        var frames = page.Frames.Select(async x => await x.Page.QuerySelectorAllAsync("a"));
 
-        var tasks = new List<Task<IElementHandle[]?>>();
-        tasks.Add(anchors());
-        foreach (var item in page.Frames)
-        {
-            // tasks.Add(item.QuerySelectorAllAsync("a"));
-        }
-        var allAnchors = await Task.WhenAll(tasks);
-        //foreach (var frame in page.Frames)
-        //{
-        //    var links = await frame.EvaluateFunctionAsync<string[]>(@"() => {
-        //    return Array.from(document.querySelectorAll('a')).map(a => a.href);
-        //}");
-        //    foreach (var link in links)
-        //    {
-        //        bag.Add(new FrameUrl(frame.Url, link));
-        //    }
-        //}
-        return bag;
+
     }
 
-    public static async Task<IReadOnlyList<CookieParam>> GetCookieParams(this IPage page)
-    {
-        var cookies = await page.GetCookiesAsync();
-        return cookies.Select(x => new CookieParam()
-        {
-            Name = x.Name,
-            Value = x.Value,
-            Domain = new Uri(page.Url).Host,
-            HttpOnly = x.HttpOnly,
-            Secure = x.Secure,
-            Expires = x.Expires
-        }).ToList().AsReadOnly();
-    }
-
-    public static async Task<IReadOnlyDictionary<string, string>> GetResponseHeaders(this IPage page)
+    public static async Task DisplayPageFrameDetails(this IPage page)
     {
         var headerChannel = Channel.CreateBounded<Dictionary<string, string>>(1);
-        page.Response += SetHeaders;
 
-        var concurrentDictionary = new ConcurrentDictionary<string, string>();
-        await foreach (var item in headerChannel.Reader.ReadAllAsync())
+        if (page != null)
         {
-            foreach (var (key, value) in item)
+            page.Response += SetHeaders;
+
+            //  $"{new Uri(page.Url).PathAndQuery} Has {page.Frames.Count()} frames".WriteLine();
+
+            foreach (var frame in page.Frames)
             {
-                concurrentDictionary.AddOrUpdate(key, value, (k, v) => value);
+                var cookieTable = new Table().AddColumns("Name", "Value").Title("Cookies").Border(TableBorder.Rounded).BorderColor(Color.Grey);
+
+                var cookies = await frame.Page.GetCookiesAsync();
+                foreach (var cookie in cookies)
+                {
+                    cookieTable.AddRow(cookie.Name.TextValue(true), cookie.Value.TextValue(true));
+                }
+
+                var headerTable = new Table().AddColumns("Name", "Value").Title("Headers").Border(TableBorder.Rounded).BorderColor(Color.Grey);
+
+                await foreach (var item in headerChannel.Reader.ReadAllAsync())
+                {
+                    foreach (var (key, value) in item)
+                    {
+                        headerTable.AddRow(key.TextValue(true), value.TextValue(true));
+                    }
+                }
+
+                var panelContent = new Table().HideHeaders().AddColumn("").Expand().Border(TableBorder.None);
+                panelContent.AddRow(headerTable);
+                panelContent.AddRow(cookieTable);
+                var panel = new Panel(panelContent);
+                panel.Header = new PanelHeader($"Frame {frame.Url}").Centered();
+                AnsiConsole.Write(panel);
+
+                page.Response -= SetHeaders;
             }
+
+            void SetHeaders(object? sender, ResponseCreatedEventArgs e)
+            {
+                var response = e.Response;
+                var headers = response.Headers;
+
+                headerChannel.Writer.TryWrite(headers);
+                headerChannel.Writer.TryComplete();
+            }
+            ;
         }
-        page.Response -= SetHeaders;
-
-        return concurrentDictionary.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
-
-        void SetHeaders(object? sender, ResponseCreatedEventArgs e)
-        {
-            var response = e.Response;
-            var headers = response.Headers;
-
-            headerChannel.Writer.TryWrite(headers);
-            headerChannel.Writer.TryComplete();
-        }
-    }
-
-    public static async Task<IEnumerable<CookieParam>> GetAllFrameCookies(this IPage page)
-    {
-        var tasks = page.Frames.Select(async frame => await frame.Page.GetCookieParams());
-        var outcome = await Task.WhenAll(tasks);
-
-        return outcome.SelectMany(x => x);
     }
 
     public static async Task<IElementHandle?> FindAnyElementHandle(this IPage page, string selector)
@@ -163,6 +171,14 @@ public static class GoPageExtensions
         return elementHandle;
     }
 
+    public static async Task<IEnumerable<CookieParam>> GetAllFrameCookies(this IPage page)
+    {
+        var tasks = page.Frames.Select(async frame => await frame.Page.GetCookieParams());
+        var outcome = await Task.WhenAll(tasks);
+
+        return outcome.SelectMany(x => x);
+    }
+
     public static async Task<IEnumerable<KeyValuePair<string, string>>> GetAllFrameHeaders(this IPage page)
     {
         var tasks = page.Frames.Select(async frame => await frame.Page.GetResponseHeaders());
@@ -171,21 +187,90 @@ public static class GoPageExtensions
         return outcome.SelectMany(x => x);
     }
 
-    public static IRenderable CookieParamsToTable(this IEnumerable<CookieParam> cookieParams, string title, bool border = false)
+    public static async Task<IEnumerable<FrameUrl>> GetAllFrameUrls(this IPage page)
     {
-        var cookieTable = new Table().AddColumns("Name", "Value").Border(border ? TableBorder.Rounded : TableBorder.None).BorderColor(Color.Grey);
+        var bag = new ConcurrentBag<FrameUrl>();
 
-        var titleRule = new Rule(title);
-        titleRule.Style = new Style(foreground: Color.White, background: Color.NavyBlue);
+        var anchors = () => page.QuerySelectorAllAsync(".sidenavlinks");
+        var frames = page.Frames.Select(async x => await x.Page.QuerySelectorAllAsync("a"));
 
-        foreach (var cookie in cookieParams)
+        var tasks = new List<Task<IElementHandle[]?>>();
+        tasks.Add(anchors());
+        foreach (var item in page.Frames)
         {
-            cookieTable.AddRow(cookie.Name.TextValue(true), cookie.Value.TextValue(true));
+            // tasks.Add(item.QuerySelectorAllAsync("a"));
         }
-
-        return new Rows(titleRule, cookieTable).Expand();
+        var allAnchors = await Task.WhenAll(tasks);
+        //foreach (var frame in page.Frames)
+        //{
+        //    var links = await frame.EvaluateFunctionAsync<string[]>(@"() => {
+        //    return Array.from(document.querySelectorAll('a')).map(a => a.href);
+        //}");
+        //    foreach (var link in links)
+        //    {
+        //        bag.Add(new FrameUrl(frame.Url, link));
+        //    }
+        //}
+        return bag;
     }
 
+    public static async Task<IReadOnlyList<CookieParam>> GetCookieParams(this IPage page)
+    {
+        var cookies = await page.GetCookiesAsync();
+        return cookies.Select(x => new CookieParam()
+        {
+            Name = x.Name,
+            Value = x.Value,
+            Domain = new Uri(page.Url).Host,
+            HttpOnly = x.HttpOnly,
+            Secure = x.Secure,
+            Expires = x.Expires
+        }).ToList().AsReadOnly();
+    }
+
+    public static async Task<IReadOnlyList<NavigationLink>> GetMenuLinksAsync(this IPage page)
+    {
+        var menuLinks = await page.QuerySelectorAllAsync(".sidenavlinks");
+        var asyncEnumerable = menuLinks.ToAsyncEnumerable();
+        var bag = new ConcurrentBag<NavigationLink>();
+        await foreach (var link in asyncEnumerable)
+        {
+            var id = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('data-id')");
+            var title = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('data-title')");
+            var href = await link.EvaluateFunctionAsync<string>("el => el.getAttribute('href')");
+            if (!string.IsNullOrWhiteSpace(href))
+            {
+                bag.Add(new NavigationLink(id ?? string.Empty, title ?? string.Empty, href, link));
+            }
+        }
+        return bag.ToList().AsReadOnly();
+    }
+    public static async Task<IReadOnlyDictionary<string, string>> GetResponseHeaders(this IPage page)
+    {
+        var headerChannel = Channel.CreateBounded<Dictionary<string, string>>(1);
+        page.Response += SetHeaders;
+
+        var concurrentDictionary = new ConcurrentDictionary<string, string>();
+        await foreach (var item in headerChannel.Reader.ReadAllAsync())
+        {
+            foreach (var (key, value) in item)
+            {
+                concurrentDictionary.AddOrUpdate(key, value, (k, v) => value);
+            }
+        }
+        page.Response -= SetHeaders;
+
+        return concurrentDictionary.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+        void SetHeaders(object? sender, ResponseCreatedEventArgs e)
+        {
+            var response = e.Response;
+            var headers = response.Headers;
+
+            headerChannel.Writer.TryWrite(headers);
+            headerChannel.Writer.TryComplete();
+        }
+    }
     public static IRenderable HeadersToTable(this IReadOnlyDictionary<string, string> headers, string title, bool border = false)
     {
         var headerTable = new Table().AddColumns("Name", "Value").Border(border ? TableBorder.Rounded : TableBorder.None).BorderColor(Color.Grey);
@@ -206,60 +291,7 @@ public static class GoPageExtensions
 
         return new Rows(titleRule, headerTable).Expand();
     }
-
-    public static async Task DisplayPageFrameDetails(this IPage page)
-    {
-        var headerChannel = Channel.CreateBounded<Dictionary<string, string>>(1);
-
-        if (page != null)
-        {
-            page.Response += SetHeaders;
-
-            //  $"{new Uri(page.Url).PathAndQuery} Has {page.Frames.Count()} frames".WriteLine();
-
-            foreach (var frame in page.Frames)
-            {
-                var cookieTable = new Table().AddColumns("Name", "Value").Title("Cookies").Border(TableBorder.Rounded).BorderColor(Color.Grey);
-
-                var cookies = await frame.Page.GetCookiesAsync();
-                foreach (var cookie in cookies)
-                {
-                    cookieTable.AddRow(cookie.Name.TextValue(true), cookie.Value.TextValue(true));
-                }
-
-                var headerTable = new Table().AddColumns("Name", "Value").Title("Headers").Border(TableBorder.Rounded).BorderColor(Color.Grey);
-
-                await foreach (var item in headerChannel.Reader.ReadAllAsync())
-                {
-                    foreach (var (key, value) in item)
-                    {
-                        headerTable.AddRow(key.TextValue(true), value.TextValue(true));
-                    }
-                }
-
-                var panelContent = new Table().HideHeaders().AddColumn("").Expand().Border(TableBorder.None);
-                panelContent.AddRow(headerTable);
-                panelContent.AddRow(cookieTable);
-                var panel = new Panel(panelContent);
-                panel.Header = new PanelHeader($"Frame {frame.Url}").Centered();
-                AnsiConsole.Write(panel);
-
-                page.Response -= SetHeaders;
-            }
-
-            void SetHeaders(object? sender, ResponseCreatedEventArgs e)
-            {
-                var response = e.Response;
-                var headers = response.Headers;
-
-                headerChannel.Writer.TryWrite(headers);
-                headerChannel.Writer.TryComplete();
-            }
-            ;
-        }
-    }
-
-    public static async Task<IResponse?> PostFormAsync(this IPage page, FormDetails formDetails, IProgressTaskNotificationService progressTaskNotificationService)
+    public static async Task<IResponse?> PostFormAsync(this IPage page, TestCaseProperties formDetails, IProgressTaskNotificationService progressTaskNotificationService)
     {
 
 
@@ -274,7 +306,7 @@ public static class GoPageExtensions
             {
                 try
                 {
-                    progressTaskNotificationService.Information($"Setting form field {item.Key} to {item.Value} on {page.Url}");
+                    // progressTaskNotificationService.Information($"Setting form field {item.Key} to {item.Value} on {page.Url}");
                     var field = await page.QuerySelectorAsync(item.Key);
 
                     if (field != null)
@@ -283,7 +315,7 @@ public static class GoPageExtensions
                     }
                     else
                     {
-                        progressTaskNotificationService.Information($"Form field {item.Key} not found on {page.Url}");
+                        progressTaskNotificationService.Information($"Form field {item.Key} not found.");
                     }
                 }
                 catch (Exception ex)
@@ -292,16 +324,22 @@ public static class GoPageExtensions
                 }
             }
 
+            var form = await page.DebugFormInputs();
             await progressTaskNotificationService.NotifyAsync($"Submitting form {formDetails.FormSubmitButton} to {page.Url}");
             try
             {
+
+                foreach (var item in form)
+                {
+                    progressTaskNotificationService.Information(item);
+                }
                 //await page.SetRequestInterceptionAsync(true);
                 page.Console += Page_Console;
                 page.Response += Page_Response;
                 // var result = await page.EvaluateExpressionAsync("document.getElementById(\"rfpadd\").submit();");
                 page.PageError += Page_PageError;
                 page.Popup += Page_Popup;
-                page.RequestFailed += Page_RequestFailed;
+                //    page.RequestFailed += Page_RequestFailed;
                 await page.ClickAsync(formDetails.FormSubmitButton);
                 page.PageError -= Page_PageError;
 
@@ -318,10 +356,10 @@ public static class GoPageExtensions
                 page.Response -= Page_Response;
                 page.PageError -= Page_PageError;
                 page.Popup -= Page_Popup;
-                page.RequestFailed -= Page_RequestFailed;
+                //     page.RequestFailed -= Page_RequestFailed;
 
 
-                progressTaskNotificationService.Information($"Form Response: {(response != null ? response.Status.ToString().Success() : "No Response".Error())} on {page.Url}");
+                progressTaskNotificationService.Information($"Form Response: {(response != null ? response.Status.ToString() : "No Response")} on {page.Url}");
                 return response ?? new PrivateResponse(responseCode);
             }
             catch (Exception ex)
@@ -342,7 +380,10 @@ public static class GoPageExtensions
         }
         void Page_RequestFailed(object? sender, RequestEventArgs e)
         {
-            logBuffer.Enqueue($"RequestFailed: {e.Request.Url}  {e.Request.FailureText}");
+            if (e.Request.Url.Contains("redteam"))
+            {
+                logBuffer.Enqueue($"RequestFailed: {e.Request.Url}  {e.Request.FailureText}");
+            }
         }
         void Page_Console(object? sender, ConsoleEventArgs e)
         {
@@ -357,9 +398,9 @@ public static class GoPageExtensions
                 logBuffer.Enqueue($"Response: {e.Response.Url}  {e.Response.Status}");
             }
         }
+
+
     }
-
-
     internal class PrivateResponse : IResponse
     {
         public PrivateResponse(int status)
@@ -367,28 +408,17 @@ public static class GoPageExtensions
             Status = (HttpStatusCode)status;
 
         }
-        public string Url => throw new NotImplementedException();
-
-        public Dictionary<string, string> Headers => throw new NotImplementedException();
-
-        public HttpStatusCode Status { get; init; }
-
-        public bool Ok => Status == HttpStatusCode.OK;
-
-        public IRequest Request => throw new NotImplementedException();
-
-        public bool FromCache => throw new NotImplementedException();
-
-        public SecurityDetails SecurityDetails => throw new NotImplementedException();
-
-        public bool FromServiceWorker => throw new NotImplementedException();
-
-        public string StatusText => throw new NotImplementedException();
-
-        public RemoteAddress RemoteAddress => throw new NotImplementedException();
-
         public IFrame Frame => throw new NotImplementedException();
-
+        public bool FromCache => throw new NotImplementedException();
+        public bool FromServiceWorker => throw new NotImplementedException();
+        public Dictionary<string, string> Headers => throw new NotImplementedException();
+        public bool Ok => Status == HttpStatusCode.OK;
+        public RemoteAddress RemoteAddress => throw new NotImplementedException();
+        public IRequest Request => throw new NotImplementedException();
+        public SecurityDetails SecurityDetails => throw new NotImplementedException();
+        public HttpStatusCode Status { get; init; }
+        public string StatusText => throw new NotImplementedException();
+        public string Url => throw new NotImplementedException();
         public ValueTask<byte[]> BufferAsync()
         {
             throw new NotImplementedException();

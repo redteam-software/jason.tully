@@ -29,7 +29,7 @@ public class SecurityAnalysisTestConfiguration
     public bool RequiresAuthentication { get; set; } = false;
     public List<string> Rules { get; set; } = new List<string>();
 
-    public Dictionary<string, object> Properties { get; set; } = new Dictionary<string, object>();
+    public TestCaseProperties Properties { get; set; } = new TestCaseProperties();
 }
 
 public class TestData

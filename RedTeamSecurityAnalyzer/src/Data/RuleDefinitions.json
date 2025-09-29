@@ -260,7 +260,7 @@
           "Description": "",
           "SuccessStatusCodes": [ 403 ],
           "FailureStatusCodes": [ 200, 500 ],
-          "ReferencesRules": [ "Basic", "ColdFusion", "NullBytes", "HTMLEntities", "Advanced" ]
+          "ReferencesRules": [ "Basic", "Advanced"]
         }
       ]
     },

@@ -56,12 +56,13 @@ public class RedTeamSecurityAnalysisTestCaseProvider : IRedTeamSecurityAnalysisT
                          test.Runner,
                          test.Category,
                          MapRules(ruleGroup),
-                         test.Properties,
+                        test.Properties,
                          test.Enabled,
                          test.RequiresAuthentication);
 
         return query.ToList();
     }
+
 
     private List<RedTeamSecurityAnalysisRule> MapRules(IEnumerable<SecurityAnalysisRuleConfiguration> ruleConfiguration)
     {

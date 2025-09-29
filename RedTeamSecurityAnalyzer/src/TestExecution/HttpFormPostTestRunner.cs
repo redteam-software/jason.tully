@@ -20,66 +20,63 @@ public class HttpFormPostTestRunner : AbstractTestRunner
         var page = await Authenticate(test, rule, context);
         await notificationService.NotifyAsync($"Starting analysis for rule: {rule.Name.ToString().Information()}");
 
-        var response = await page.GoToAsync(test.BaseUrl);
-
-
-
-
-        if (response != null && response.Ok)
+        foreach (var testData in rule.TestData)
         {
+            var response = await page.GoToAsync(test.BaseUrl);
+            var (urlPattern, description, successStatusCode, failureStatusCodes) = testData;
+            var ruleName = rule.Name;
 
-
-            foreach (var testData in rule.TestData)
+            var formDetails = test.Properties;
+            if (formDetails == null)
             {
-                var (urlPattern, description, successStatusCode, failureStatusCodes) = testData;
-                var ruleName = rule.Name;
+                return defaultResponse;
+            }
 
-                var formDetails = test.PropertiesTo<FormDetails>();
-                if (formDetails == null)
-                {
-                    return defaultResponse;
-                }
-
-                foreach (var key in formDetails.FormKeys.Keys)
+            foreach (var key in formDetails.FormKeys.Keys)
+            {
+                if (string.IsNullOrWhiteSpace(formDetails.FormKeys[key]))
                 {
                     formDetails.FormKeys[key] = testData.Pattern;
                 }
-
-
-
-
-                var formPostResponse = await page.PostFormAsync(formDetails, notificationService);
-
-                int responseCode = formPostResponse != null ? (int)formPostResponse.Status : 500;
-
-                if (successStatusCode.Contains(responseCode))
-                {
-                    await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Success()} Passed.");
-                    testCaseResponses.Add(new(SecurityAnalysisStatus.Passed, rule, testData, $"Pattern '{urlPattern}' Succeeded"));
-                }
-                else if (failureStatusCodes.Contains(responseCode))
-                {
-                    await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Error()} Failed.");
-                    string? content = null;
-                    if (response != null)
-                    {
-                        //content = await response.TextAsync();
-                    }
-                    testCaseResponses.Add(new(SecurityAnalysisStatus.Failed, rule, testData, $"Pattern '{urlPattern}' Failed", content));
-                }
-                else
-                {
-                    string? content = null;
-                    if (response != null)
-                    {
-                        content = await response.TextAsync();
-                    }
-                    await notificationService.NotifyAsync($"I don't know what to do with this response {response?.Status}.  Skipping");
-                    testCaseResponses.Add(new(SecurityAnalysisStatus.Unknown, rule, testData, $"URL {response?.Status}", content));
-                }
-
-                notificationService.ProgressTask.Increment(totalRules);
             }
+
+
+
+
+            var formPostResponse = await page.PostFormAsync(formDetails, notificationService);
+
+            int responseCode = formPostResponse != null ? (int)formPostResponse.Status : 500;
+
+            if (successStatusCode.Contains(responseCode))
+            {
+                await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Success()} Passed.");
+                testCaseResponses.Add(new(SecurityAnalysisStatus.Passed, rule, testData, $"Pattern '{urlPattern}' Succeeded"));
+            }
+            else if (failureStatusCodes.Contains(responseCode))
+            {
+                await notificationService.NotifyAsync($"URL Pattern: {urlPattern.Error()} Failed.");
+                string? content = null;
+                if (response != null)
+                {
+                    //content = await response.TextAsync();
+                }
+                testCaseResponses.Add(new(SecurityAnalysisStatus.Failed, rule, testData, $"Pattern '{urlPattern}' Failed", content));
+                response = await page.GoToAsync(test.BaseUrl);
+            }
+            else
+            {
+                string? content = null;
+                if (response != null)
+                {
+                    content = await response.TextAsync();
+                }
+                await notificationService.NotifyAsync($"I don't know what to do with this response {response?.Status}.  Skipping");
+                testCaseResponses.Add(new(SecurityAnalysisStatus.Unknown, rule, testData, $"URL {response?.Status}", content));
+                response = await page.GoToAsync(test.BaseUrl);
+            }
+
+            notificationService.ProgressTask.Increment(totalRules);
+
         }
 
         return new TestRunnerResponse(test, rule, testCaseResponses);
