@@ -58,3 +58,6 @@ nupkg/
 
 **/node_modules/
 
+**/.vs/
+**/nupkg/
+**/obj/
