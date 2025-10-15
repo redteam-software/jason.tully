@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RedTeamGoCli": {
+      "commandName": "Project",
+      "commandLineArgs": "cf-sync"
+    }
+  }
+}

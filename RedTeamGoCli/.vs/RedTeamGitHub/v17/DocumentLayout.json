@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\services\\iremotechangesynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\services\\iremotechangesynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\commands\\coldfusionremotesynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\commands\\coldfusionremotesynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\services\\ifilesystemchangemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\services\\ifilesystemchangemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\redteamgithub.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\redteamgithub.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|d:\\development\\redteam\\tools\\redteamgithub\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGitHub.csproj|solutionrelative:src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\INotificationService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\INotificationService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\INotificationService.cs",
+              "RelativeToolTip": "src\\Services\\INotificationService.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwFYAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T15:01:14.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRemoteChangeSynchronizationService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\IRemoteChangeSynchronizationService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\IRemoteChangeSynchronizationService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\IRemoteChangeSynchronizationService.cs",
+              "RelativeToolTip": "src\\Services\\IRemoteChangeSynchronizationService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAuwEUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T12:02:48.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IFileSystemChangeMonitor.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\IFileSystemChangeMonitor.cs",
+              "RelativeDocumentMoniker": "src\\Services\\IFileSystemChangeMonitor.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Services\\IFileSystemChangeMonitor.cs",
+              "RelativeToolTip": "src\\Services\\IFileSystemChangeMonitor.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAywCsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T11:48:35.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ColdFusionRemoteSyncCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Commands\\ColdFusionRemoteSyncCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\ColdFusionRemoteSyncCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Commands\\ColdFusionRemoteSyncCommand.cs",
+              "RelativeToolTip": "src\\Commands\\ColdFusionRemoteSyncCommand.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIAywCUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T15:47:03.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RedTeamGitHub.csproj",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\RedTeamGitHub.csproj",
+              "RelativeDocumentMoniker": "src\\RedTeamGitHub.csproj",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\RedTeamGitHub.csproj",
+              "RelativeToolTip": "src\\RedTeamGitHub.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-10T14:44:17.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Program.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\Program.cs",
+              "RelativeToolTip": "src\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T13:43:55.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IGitHubCli.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\IGitHubCli.cs",
+              "RelativeDocumentMoniker": "src\\IGitHubCli.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGitHub\\src\\IGitHubCli.cs",
+              "RelativeToolTip": "src\\IGitHubCli.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAQwGQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T15:18:32.043Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

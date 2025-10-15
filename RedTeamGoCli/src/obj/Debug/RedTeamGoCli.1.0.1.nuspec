@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RedTeamGoCli</id>
+    <version>1.0.1</version>
+    <authors>RedTeamGoCli</authors>
+    <description>Package Description</description>
+    <packageTypes>
+      <packageType name="DotnetTool" />
+    </packageTypes>
+    <repository type="git" />
+    <frameworkReferences>
+      <group targetFramework="net9.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\obj\Debug\net9.0\DotnetToolSettings.xml" target="tools\net9.0\any\DotnetToolSettings.xml" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\RedTeamGoCli.dll" target="tools\net9.0\any\RedTeamGoCli.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\RedTeamGoCli.deps.json" target="tools\net9.0\any\RedTeamGoCli.deps.json" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\RedTeamGoCli.runtimeconfig.json" target="tools\net9.0\any\RedTeamGoCli.runtimeconfig.json" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\RedTeamGoCli.pdb" target="tools\net9.0\any\RedTeamGoCli.pdb" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Cocona.dll" target="tools\net9.0\any\Cocona.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Cocona.Core.dll" target="tools\net9.0\any\Cocona.Core.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\FluentFTP.dll" target="tools\net9.0\any\FluentFTP.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Injectio.Attributes.dll" target="tools\net9.0\any\Injectio.Attributes.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.Binder.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.Binder.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.CommandLine.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.CommandLine.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.FileExtensions.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.Json.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.Json.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Configuration.UserSecrets.dll" target="tools\net9.0\any\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.DependencyInjection.dll" target="tools\net9.0\any\Microsoft.Extensions.DependencyInjection.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.DependencyInjection.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Diagnostics.dll" target="tools\net9.0\any\Microsoft.Extensions.Diagnostics.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Diagnostics.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.Diagnostics.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.FileProviders.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.FileProviders.Physical.dll" target="tools\net9.0\any\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.FileSystemGlobbing.dll" target="tools\net9.0\any\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Hosting.dll" target="tools\net9.0\any\Microsoft.Extensions.Hosting.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Hosting.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.Hosting.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.Abstractions.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.Configuration.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.Configuration.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.Console.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.Console.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.Debug.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.Debug.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.EventLog.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.EventLog.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Logging.EventSource.dll" target="tools\net9.0\any\Microsoft.Extensions.Logging.EventSource.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Options.dll" target="tools\net9.0\any\Microsoft.Extensions.Options.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Options.ConfigurationExtensions.dll" target="tools\net9.0\any\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Microsoft.Extensions.Primitives.dll" target="tools\net9.0\any\Microsoft.Extensions.Primitives.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\RedTeam.Extensions.Console.dll" target="tools\net9.0\any\RedTeam.Extensions.Console.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Spectre.Console.dll" target="tools\net9.0\any\Spectre.Console.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\Spectre.Console.Json.dll" target="tools\net9.0\any\Spectre.Console.Json.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\System.Diagnostics.EventLog.dll" target="tools\net9.0\any\System.Diagnostics.EventLog.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\YamlDotNet.dll" target="tools\net9.0\any\YamlDotNet.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\ja-JP\Cocona.resources.dll" target="tools\net9.0\any\ja-JP\Cocona.resources.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\ja-JP\Cocona.Core.resources.dll" target="tools\net9.0\any\ja-JP\Cocona.Core.resources.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\ko-KR\Cocona.resources.dll" target="tools\net9.0\any\ko-KR\Cocona.resources.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\ko-KR\Cocona.Core.resources.dll" target="tools\net9.0\any\ko-KR\Cocona.Core.resources.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\zh-CN\Cocona.Core.resources.dll" target="tools\net9.0\any\zh-CN\Cocona.Core.resources.dll" />
+    <file src="D:\Development\RedTeam\Tools\RedTeamGoCli\src\bin\Debug\net9.0\publish\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll" target="tools\net9.0\any\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll" />
+  </files>
+</package>
