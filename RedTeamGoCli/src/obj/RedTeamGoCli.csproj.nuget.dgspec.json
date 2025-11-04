@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj": {}
+    "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj": {}
   },
   "projects": {
-    "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj": {
-      "version": "1.0.0",
+    "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj": {
+      "version": "1.0.8",
       "restore": {
-        "projectUniqueName": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
-        "projectName": "RedTeamGoCli",
-        "projectPath": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
+        "projectUniqueName": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
+        "projectName": "rtgo",
+        "projectPath": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
         "packagesPath": "C:\\Users\\Jason Tully\\.nuget\\packages\\",
-        "outputPath": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\obj\\",
+        "outputPath": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -28,7 +28,8 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "D:\\Development\\LocalNuget": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/redteam-software/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -56,9 +57,17 @@
               "target": "Package",
               "version": "[53.0.2, )"
             },
+            "MoreLinq": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.4, )"
+            },
             "RedTeam.Extensions.Console": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.13, )"
             }
           },
           "imports": [

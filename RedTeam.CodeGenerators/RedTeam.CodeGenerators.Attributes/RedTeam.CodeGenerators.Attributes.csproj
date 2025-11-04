@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <PackageId>RedTeam.CodeGenerators</PackageId>
+        <PackageOutputPath>./nuget</PackageOutputPath>
+        <Version>1.0.0</Version>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="nuget\**" />
+        <EmbeddedResource Remove="nuget\**" />
+        <None Remove="nuget\**" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+
+        <None Include="..\RedTeam.CodeGenerators\bin\$(Configuration)\netstandard2.0\RedTeam.CodeGenerators.dll" PackagePath="analyzers\dotnet\roslyn4.4\cs" Pack="true" Visible="false" />
+
+    </ItemGroup>
+</Project>
+
+

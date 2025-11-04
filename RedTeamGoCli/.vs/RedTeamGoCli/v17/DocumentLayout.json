@@ -1,61 +1,130 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\",
+  "WorkspaceRootPath": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\redteamgocli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\redteamgocli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\grafanacloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\grafanacloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\commands\\coldfusionremotesynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\coldfusionremotesynccommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\commandmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\commandmetadata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\extensions\\channelreaderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\extensions\\channelreaderextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Development\\PackageDevelopment\\RedTeam.Extensions.Console\\RedTeam.Extensions.Console\\Fonts\\EmbeddedFigletFont.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\services\\ifilesystemchangemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\ifilesystemchangemonitor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\commands\\automatedpullrequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\automatedpullrequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\listchangescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\listchangescommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\getremotelogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\getremotelogcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\igitclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\igitclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\cherrypickcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\cherrypickcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\automatedpullrequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\automatedpullrequestcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\tools\\redteamgocli\\src\\igocoldfusionclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\igocoldfusionclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\githubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\githubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\redteamplatformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\redteamplatformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\sshconfigcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\sshconfigcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\listpullrequestscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\listpullrequestscommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\igrafanacloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\igrafanacloudservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\iredteamplatformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\iredteamplatformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\commands\\unifiedloginsignupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\commands\\unifiedloginsignupcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\sshservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\sshservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\iremoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\iremoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\remotechangesynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\remotechangesynchronizationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\ftpremoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\ftpremoteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\igithubcli.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\gitcommandlineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\gitcommandlineservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\igoprojectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\igoprojectfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\redteamgocli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\redteamgocli.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\barchartnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\barchartnotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\sshconfigparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\sshconfigparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\services\\livetablenotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\services\\livetablenotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\models\\commitrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\models\\commitrange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\models\\projects\\gocoldfusion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\models\\projects\\gocoldfusion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\igitservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\igitservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\interfaces\\isshconfigparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\interfaces\\isshconfigparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|d:\\development\\redteam\\jason.tully\\redteamgocli\\src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{690FC9BB-E612-146D-8B5E-98BF37B7713A}|src\\RedTeamGoCli.csproj|solutionrelative:src\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,7 +134,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,184 +142,394 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChannelReaderExtensions.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Extensions\\ChannelReaderExtensions.cs",
-              "RelativeDocumentMoniker": "src\\Extensions\\ChannelReaderExtensions.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Extensions\\ChannelReaderExtensions.cs",
-              "RelativeToolTip": "src\\Extensions\\ChannelReaderExtensions.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CommandMetadata.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\CommandMetadata.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\CommandMetadata.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\CommandMetadata.cs",
+              "RelativeToolTip": "src\\Commands\\CommandMetadata.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAA8wEAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T14:18:45.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EmbeddedFigletFont.cs",
-              "DocumentMoniker": "D:\\Development\\PackageDevelopment\\RedTeam.Extensions.Console\\RedTeam.Extensions.Console\\Fonts\\EmbeddedFigletFont.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\PackageDevelopment\\RedTeam.Extensions.Console\\RedTeam.Extensions.Console\\Fonts\\EmbeddedFigletFont.cs",
-              "ToolTip": "D:\\Development\\PackageDevelopment\\RedTeam.Extensions.Console\\RedTeam.Extensions.Console\\Fonts\\EmbeddedFigletFont.cs",
-              "RelativeToolTip": "..\\..\\..\\PackageDevelopment\\RedTeam.Extensions.Console\\RedTeam.Extensions.Console\\Fonts\\EmbeddedFigletFont.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T14:12:10.81Z",
+              "WhenOpened": "2025-11-04T16:41:51.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "src\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Properties\\launchSettings.json",
-              "RelativeToolTip": "src\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-15T13:23:43.522Z",
+              "Title": "RedTeamPlatformService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\RedTeamPlatformService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\RedTeamPlatformService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\RedTeamPlatformService.cs",
+              "RelativeToolTip": "src\\Services\\RedTeamPlatformService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAkwGoAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T16:40:39.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RedTeamGoCli",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
-              "RelativeDocumentMoniker": "src\\RedTeamGoCli.csproj",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
-              "RelativeToolTip": "src\\RedTeamGoCli.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-15T13:15:43.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AutomatedPullRequestCommand.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Commands\\AutomatedPullRequestCommand.cs",
-              "RelativeDocumentMoniker": "src\\Commands\\AutomatedPullRequestCommand.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Commands\\AutomatedPullRequestCommand.cs",
-              "RelativeToolTip": "src\\Commands\\AutomatedPullRequestCommand.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAowBsAAAAJAAAAAAAAAA==",
+              "Title": "GrafanaCloudService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GrafanaCloudService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\GrafanaCloudService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GrafanaCloudService.cs",
+              "RelativeToolTip": "src\\Services\\GrafanaCloudService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAqwB4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:42:01.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "INotificationService.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Services\\INotificationService.cs",
-              "RelativeDocumentMoniker": "src\\Services\\INotificationService.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Services\\INotificationService.cs",
-              "RelativeToolTip": "src\\Services\\INotificationService.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAArwEIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:39:53.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ColdFusionRemoteSyncCommand.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Commands\\ColdFusionRemoteSyncCommand.cs",
-              "RelativeDocumentMoniker": "src\\Commands\\ColdFusionRemoteSyncCommand.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Commands\\ColdFusionRemoteSyncCommand.cs",
-              "RelativeToolTip": "src\\Commands\\ColdFusionRemoteSyncCommand.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAEgAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T13:17:49.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IFileSystemChangeMonitor.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Services\\IFileSystemChangeMonitor.cs",
-              "RelativeDocumentMoniker": "src\\Services\\IFileSystemChangeMonitor.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Services\\IFileSystemChangeMonitor.cs",
-              "RelativeToolTip": "src\\Services\\IFileSystemChangeMonitor.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAYwG8AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T12:13:17.595Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReadMe.md",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\ReadMe.md",
-              "RelativeDocumentMoniker": "src\\ReadMe.md",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\ReadMe.md",
-              "RelativeToolTip": "src\\ReadMe.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-10-15T16:00:53.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IGitHubCli.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGitHubCli.cs",
-              "RelativeDocumentMoniker": "src\\IGitHubCli.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGitHubCli.cs",
-              "RelativeToolTip": "src\\IGitHubCli.cs",
-              "ViewState": "AgIAAJ0AAAAAAAAAAIAwwKYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T15:58:45.142Z",
+              "WhenOpened": "2025-11-04T16:33:23.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "IGitClient.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGitClient.cs",
-              "RelativeDocumentMoniker": "src\\IGitClient.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGitClient.cs",
-              "RelativeToolTip": "src\\IGitClient.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAIAwwDIAAAAbAAAAAAAAAA==",
+              "Title": "IGrafanaCloudService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGrafanaCloudService.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IGrafanaCloudService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGrafanaCloudService.cs",
+              "RelativeToolTip": "src\\Interfaces\\IGrafanaCloudService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T15:58:05.354Z",
+              "WhenOpened": "2025-11-04T16:32:40.004Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "GlobalUsings.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\GlobalUsings.cs",
-              "RelativeDocumentMoniker": "src\\GlobalUsings.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\GlobalUsings.cs",
-              "RelativeToolTip": "src\\GlobalUsings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Title": "IRedTeamPlatformService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IRedTeamPlatformService.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IRedTeamPlatformService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IRedTeamPlatformService.cs",
+              "RelativeToolTip": "src\\Interfaces\\IRedTeamPlatformService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T15:56:01.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Program.cs",
-              "RelativeDocumentMoniker": "src\\Program.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\Program.cs",
-              "RelativeToolTip": "src\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T15:52:30.185Z",
+              "WhenOpened": "2025-11-04T16:21:56.526Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "IGoColdFusionClient.cs",
-              "DocumentMoniker": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGoColdFusionClient.cs",
-              "RelativeDocumentMoniker": "src\\IGoColdFusionClient.cs",
-              "ToolTip": "D:\\Development\\RedTeam\\Tools\\RedTeamGoCli\\src\\IGoColdFusionClient.cs",
-              "RelativeToolTip": "src\\IGoColdFusionClient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Title": "UnifiedLoginSignupCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\UnifiedLoginSignupCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\UnifiedLoginSignupCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\UnifiedLoginSignupCommand.cs",
+              "RelativeToolTip": "src\\Commands\\UnifiedLoginSignupCommand.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAACAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-15T15:51:57.541Z",
+              "WhenOpened": "2025-11-04T14:12:44.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FtpRemoteService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\FtpRemoteService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\FtpRemoteService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\FtpRemoteService.cs",
+              "RelativeToolTip": "src\\Services\\FtpRemoteService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAIA6wDMAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:59:50.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IRemoteService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IRemoteService.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IRemoteService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IRemoteService.cs",
+              "RelativeToolTip": "src\\Interfaces\\IRemoteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:59:39.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CherryPickCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\CherryPickCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\CherryPickCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\CherryPickCommand.cs",
+              "RelativeToolTip": "src\\Commands\\CherryPickCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T12:57:00.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-04T12:56:44.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IGitHubCli.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGitHubCli.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IGitHubCli.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGitHubCli.cs",
+              "RelativeToolTip": "src\\Interfaces\\IGitHubCli.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:03:26.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GitHubCli.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GitHubCli.cs",
+              "RelativeDocumentMoniker": "src\\Services\\GitHubCli.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GitHubCli.cs",
+              "RelativeToolTip": "src\\Services\\GitHubCli.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAxwCwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:02:07.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ListPullRequestsCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\ListPullRequestsCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\ListPullRequestsCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\ListPullRequestsCommand.cs",
+              "RelativeToolTip": "src\\Commands\\ListPullRequestsCommand.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAkwFAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T19:32:20.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SshConfigCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\SshConfigCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\SshConfigCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\SshConfigCommand.cs",
+              "RelativeToolTip": "src\\Commands\\SshConfigCommand.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwBYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T19:09:57.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SshService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\SshService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\SshService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\SshService.cs",
+              "RelativeToolTip": "src\\Services\\SshService.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAADgv0YAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T18:26:33.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BarChartNotificationService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\BarChartNotificationService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\BarChartNotificationService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\BarChartNotificationService.cs",
+              "RelativeToolTip": "src\\Services\\BarChartNotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T17:29:35.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LiveTableNotificationService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\LiveTableNotificationService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\LiveTableNotificationService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\LiveTableNotificationService.cs",
+              "RelativeToolTip": "src\\Services\\LiveTableNotificationService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T17:29:12.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GitCommandLineService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GitCommandLineService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\GitCommandLineService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\GitCommandLineService.cs",
+              "RelativeToolTip": "src\\Services\\GitCommandLineService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T17:25:38.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CommitRange.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Models\\CommitRange.cs",
+              "RelativeDocumentMoniker": "src\\Models\\CommitRange.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Models\\CommitRange.cs",
+              "RelativeToolTip": "src\\Models\\CommitRange.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T14:57:53.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IGitService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGitService.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IGitService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGitService.cs",
+              "RelativeToolTip": "src\\Interfaces\\IGitService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T14:42:28.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RemoteChangeSynchronizationService.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\RemoteChangeSynchronizationService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\RemoteChangeSynchronizationService.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\RemoteChangeSynchronizationService.cs",
+              "RelativeToolTip": "src\\Services\\RemoteChangeSynchronizationService.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAADgvyEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T13:30:28.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SshConfigParser.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\SshConfigParser.cs",
+              "RelativeDocumentMoniker": "src\\Services\\SshConfigParser.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Services\\SshConfigParser.cs",
+              "RelativeToolTip": "src\\Services\\SshConfigParser.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAywBIAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T13:37:18.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ISshConfigParser.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\ISshConfigParser.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\ISshConfigParser.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\ISshConfigParser.cs",
+              "RelativeToolTip": "src\\Interfaces\\ISshConfigParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T13:35:28.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetRemoteLogCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\GetRemoteLogCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\GetRemoteLogCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\GetRemoteLogCommand.cs",
+              "RelativeToolTip": "src\\Commands\\GetRemoteLogCommand.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwCsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T20:04:28.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ReadMe.md",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\ReadMe.md",
+              "RelativeDocumentMoniker": "src\\ReadMe.md",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\ReadMe.md",
+              "RelativeToolTip": "src\\ReadMe.md",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-29T13:15:45.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RedTeamGoCli.csproj",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
+              "RelativeDocumentMoniker": "src\\RedTeamGoCli.csproj",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\RedTeamGoCli.csproj",
+              "RelativeToolTip": "src\\RedTeamGoCli.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-29T13:15:20.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IGoProjectFactory.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGoProjectFactory.cs",
+              "RelativeDocumentMoniker": "src\\Interfaces\\IGoProjectFactory.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Interfaces\\IGoProjectFactory.cs",
+              "RelativeToolTip": "src\\Interfaces\\IGoProjectFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-28T18:34:47.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\appsettings.json",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\appsettings.json",
+              "RelativeToolTip": "src\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-28T18:33:24.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GoColdFusion.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Models\\Projects\\GoColdFusion.cs",
+              "RelativeDocumentMoniker": "src\\Models\\Projects\\GoColdFusion.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Models\\Projects\\GoColdFusion.cs",
+              "RelativeToolTip": "src\\Models\\Projects\\GoColdFusion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T16:14:54.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutomatedPullRequestCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\AutomatedPullRequestCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\AutomatedPullRequestCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\AutomatedPullRequestCommand.cs",
+              "RelativeToolTip": "src\\Commands\\AutomatedPullRequestCommand.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAUwDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:05:16.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListChangesCommand.cs",
+              "DocumentMoniker": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\ListChangesCommand.cs",
+              "RelativeDocumentMoniker": "src\\Commands\\ListChangesCommand.cs",
+              "ToolTip": "D:\\Development\\RedTeam\\jason.tully\\RedTeamGoCli\\src\\Commands\\ListChangesCommand.cs",
+              "RelativeToolTip": "src\\Commands\\ListChangesCommand.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAUwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T16:05:14.708Z",
               "EditorCaption": ""
             }
           ]

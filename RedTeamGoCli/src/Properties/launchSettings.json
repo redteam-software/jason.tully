@@ -1,8 +1,55 @@
 {
   "profiles": {
-    "RedTeamGoCli": {
+    " List Git Changes": {
       "commandName": "Project",
-      "commandLineArgs": "cf-sync"
+      "commandLineArgs": "git list-changes --author \"Jason Tully\" --path D:\\Development\\RedTeam\\Go\\go-production-v4 --output brief --log-level debug --start 9c0fbf704fca403cd796b436d7dd6988ef13471d --end 1c1a560f686a4b10337b0cc0f3cb1d332835ea1c --all"
+    },
+    " Cherry Picker": {
+      "commandName": "Project",
+      "commandLineArgs": "git cherry-pick --author \"Jason Tully\" --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-cf --interactive"
+    },
+    "Auto PR": {
+      "commandName": "Project",
+      "commandLineArgs": "git auto-pr"
+    },
+    "Go Sync (CF)": {
+      "commandName": "Project",
+      "commandLineArgs": "deploy go-sync --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-cf"
+    },
+    "Go Sync (Manager)": {
+      "commandName": "Project",
+      "commandLineArgs": "deploy go-sync  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-manager"
+    },
+    "Go Sync (v4)": {
+      "commandName": "Project",
+      "commandLineArgs": "deploy go-sync  --path D:\\Development\\RedTeam\\Go\\go-production-v4"
+    },
+
+
+    "Get Laravel Log v5": {
+      "commandName": "Project",
+      "commandLineArgs": "logs  remote  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v5"
+    },
+    "Get Laravel Log v4": {
+      "commandName": "Project",
+      "commandLineArgs": "logs  remote  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v4"
+    },
+    " SSH Config List": {
+      "commandName": "Project",
+      "commandLineArgs": "config ssh-config-list"
+    },
+    "List Open PRS": {
+      "commandName": "Project",
+      "commandLineArgs": "git  list-prs --path D:\\Development\\RedTeam\\Go\\all-go-projects"
+    },
+    "Publish Loki Log": {
+      "commandName": "Project",
+      "commandLineArgs": "logs  loki --message test --tags service_name=rtgo4,key=test"
+    },
+
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "git --help"
     }
   }
 }

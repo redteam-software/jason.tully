@@ -1,40 +1,56 @@
-using RedTeam.Extensions.Console.ExtensionMethods;
-using System.Diagnostics;
-
 namespace RedTeamGoCli.Commands;
 
 public record AutomatedPullRequestParameters(
-   [Option("target", Description = "The target branch to create the pull request against. If not specified, the default branch will be used.")] string? targetBranch = "uatcode_v3",
-  string? logLevel = "error") : CommandParameters(logLevel);
+   [Option("target", Description = "The target branch to create the pull request against. If not specified, the default branch will be used.")] string? targetBranch,
+     [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
+   string? logLevel = "error") : CommandParameters(logLevel);
 
-[CommandHandler("auto-pr", "Using the current project directory,  creates a pull request, auto merges it and displays the progress of the associated git hub acction.")]
+
+[SubCommand(SubCommandGit.SubCommandName, SubCommandGit.SubCommandDescription)]
+[SubCommandHandler(
+   SubCommandGit.SubCommandName,
+   SubCommandGit.CommandAutomatedPullRequest.CommandName,
+   SubCommandGit.CommandAutomatedPullRequest.CommandDescription)]
 public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParameters>
 {
-    private readonly IGitClient _gitClient;
+    private readonly IGitService _gitService;
+    private readonly IGoProjectFactory _goProjectFactory;
     private readonly IGitHubCli _gitHubCli;
 
-    public AutomatedPullRequestCommand(IGitClient gitClient, IGitHubCli gitHubCli)
+    public AutomatedPullRequestCommand(IGitService gitService,
+         IGoProjectFactory goProjectFactory,
+        IGitHubCli gitHubCli)
     {
-        _gitClient = gitClient;
+        _gitService = gitService;
+        _goProjectFactory = goProjectFactory;
         _gitHubCli = gitHubCli;
     }
     public async Task RunAsync(AutomatedPullRequestParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
-        "auto-pr - Automates creating, merging and monitoring Go pull requests".WriteSubTitle(false);
-        if (Debugger.IsAttached)
+        SubCommandGit.CommandAutomatedPullRequest.Format().WriteSubTitle(false);
+
+
+
+        if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
         {
-            "Debugger is attached, setting current directory to 'D:\\Development\\RedTeam\\Go\\go-production-v4".Warning().WriteLine();
-            Environment.CurrentDirectory = @"D:\Development\RedTeam\Go\go-production-v4";
+            Environment.CurrentDirectory = args.path;
         }
 
+        var project = _goProjectFactory.GetProjectFromDirectory<IGoAutomaticPullRequestProject>(Environment.CurrentDirectory);
+        if (project == null)
+        {
+            $"{Environment.CurrentDirectory.TextValue(true).Error()} is not a valid Go Laravel Project".WriteLine();
+            return;
+        }
 
-        var currentBranch = _gitClient.GetCurrentBranchName()!;
+        var currentBranch = _gitService.GetCurrentBranchName()!;
 
         var targetBranch = args.targetBranch;
 
         if (string.IsNullOrWhiteSpace(targetBranch))
         {
-            targetBranch = "uatcode_v3";
+
+            targetBranch = project.TargetBranch;
         }
 
 
@@ -62,7 +78,7 @@ public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParamete
                  var prResult = await _gitHubCli.CreatePullRequest(targetBranch, currentBranch, false);
                  if (prResult.Status)
                  {
-                     prTask.PostTaskMessage(new RedTeam.Extensions.Console.Models.ProgressTaskMessage("PR Created", 200, ""));
+                     prTask.PostTaskMessage(new RedTeam.Extensions.Console.Models.ProgressTaskMessage($"PR Created {prResult.Message!.TextValue(true)}", 200, ""));
                      prTask.StopTask();
 
                      var mergeResult = await _gitHubCli.MergePullRequest();

@@ -79,3 +79,16 @@ rtgo cf-sync --user test --password test
 user=test
 password=test
 ```
+
+# get uat logs from ubuntu server
+
+```
+scp gouat:/var/www/html/uatapp.go.redteam.com/current/storage/logs/laravel-2025-10-28.log laravel-2025-10-28.log
+```
+
+
+
+
+```
+dotnet nuget push -s GitHub .\nupkg\rtgo.1.0.3.nupkg
+```
