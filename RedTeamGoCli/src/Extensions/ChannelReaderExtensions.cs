@@ -71,5 +71,4 @@ public static class ChannelReaderExtensions
             finally { timerCts.Dispose(); }
         }
     }
-
 }

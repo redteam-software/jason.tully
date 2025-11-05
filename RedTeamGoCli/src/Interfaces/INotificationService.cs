@@ -3,7 +3,6 @@
 public interface INotificationService
 {
     public Task NotifyAsync(Notification notification, CancellationToken? cancellationToken = default);
-
 }
 
 public static class INotficationServiceExtensions

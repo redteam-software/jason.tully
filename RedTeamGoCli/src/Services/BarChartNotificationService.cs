@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 
 namespace RedTeamGoCli.Services;
+
 internal class BarChartNotificationService : INotificationService
 {
     private readonly LiveDisplayContext _liveDisplayContext;
@@ -17,9 +18,6 @@ internal class BarChartNotificationService : INotificationService
         _table = table;
         _messageTable = new Table().Expand().HideRowSeparators().NoBorder();
         _messageTable.AddColumns("Message", "Time");
-
-
-
 
         _table.AddEmptyRow();
         _table.AddEmptyRow();
@@ -39,7 +37,6 @@ internal class BarChartNotificationService : INotificationService
             .CenterLabel()
             .ShowValues().AddItems(_rowMap, (item) => new BarChartItem(item.Key.Value, item.Value, Color.Yellow));
             _table.UpdateCell(1, 0, chart);
-
         }
         else
         {
@@ -47,10 +44,8 @@ internal class BarChartNotificationService : INotificationService
             _table.UpdateCell(0, 0, _messageTable);
         }
 
-
         try
         {
-
             _liveDisplayContext.Refresh();
         }
         finally

@@ -5,7 +5,11 @@ public record SshConfigParameters(
       [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
       string? logLevel = "none") : CommandParameters(logLevel);
 
-
+/// <summary>
+/// Parses and displays all configured SSH hosts from the ~/.ssh/config file.
+/// Shows host aliases and their corresponding hostnames in a formatted panel view.
+/// Optionally accepts a custom path to an alternative SSH config file.
+/// </summary>
 [SubCommand(SubCommandConfig.SubCommandName, SubCommandConfig.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandConfig.SubCommandName,
@@ -13,13 +17,13 @@ public record SshConfigParameters(
    SubCommandConfig.CommandSshConfigsList.CommandDescription)]
 public class SshConfigCommand : ICommand<SshConfigParameters>
 {
-
     private readonly ISshConfigParser _sshConfigParser;
 
     public SshConfigCommand(ISshConfigParser sshConfigParser)
     {
         _sshConfigParser = sshConfigParser;
     }
+
     public async Task RunAsync(SshConfigParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
         SubCommandConfig.CommandSshConfigsList.Format().WriteSubTitle(false);

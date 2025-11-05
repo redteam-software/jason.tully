@@ -1,6 +1,7 @@
 ﻿using RedTeamGoCli.Models.Projects;
 
 namespace RedTeamGoCli.Models;
+
 public class GoProjectConfiguration
 {
     public GrafanaCloudConfiguration GrafanaCloudConfiguration { get; set; } = null!;
@@ -10,5 +11,3 @@ public class GoProjectConfiguration
     public GoLaravel GoLaravel4 { get; set; } = null!;
     public GoLaravel GoLaravel5 { get; set; } = null!;
 }
-
-

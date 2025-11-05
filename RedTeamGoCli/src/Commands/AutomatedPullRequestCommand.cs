@@ -5,7 +5,11 @@ public record AutomatedPullRequestParameters(
      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
    string? logLevel = "error") : CommandParameters(logLevel);
 
-
+/// <summary>
+/// Automates the pull request workflow by creating a PR from the current branch to a target branch,
+/// automatically merging it, and monitoring the associated GitHub Action deployment until completion.
+/// Requires a valid Go Laravel Project directory.
+/// </summary>
 [SubCommand(SubCommandGit.SubCommandName, SubCommandGit.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandGit.SubCommandName,
@@ -25,11 +29,10 @@ public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParamete
         _goProjectFactory = goProjectFactory;
         _gitHubCli = gitHubCli;
     }
+
     public async Task RunAsync(AutomatedPullRequestParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
         SubCommandGit.CommandAutomatedPullRequest.Format().WriteSubTitle(false);
-
-
 
         if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
         {
@@ -49,11 +52,8 @@ public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParamete
 
         if (string.IsNullOrWhiteSpace(targetBranch))
         {
-
             targetBranch = project.TargetBranch;
         }
-
-
 
         var taskDescriptionColumn = new TaskDescriptionColumn();
         taskDescriptionColumn.Alignment = Justify.Left;
@@ -103,16 +103,6 @@ public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParamete
                      mergeTask.StopTask();
                      runActionTask.StopTask();
                  }
-
-
-
-
-
              });
-
     }
-
 }
-
-
-

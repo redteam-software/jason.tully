@@ -3,5 +3,4 @@ public record GoManager(string ProjectDirectory, string Description, string Name
      string Host, string User, string Password) :
     GoProject(ProjectDirectory, Description, Name), IGoFtpProject
 {
-
 }

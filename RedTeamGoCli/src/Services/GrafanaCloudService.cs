@@ -13,6 +13,7 @@ internal class GrafanaCloudService : IGrafanaCloudService
         _httpClientFactory = httpClientFactory;
         _configuration = configuration;
     }
+
     public async Task PostLokiLogMessageAsync(string logMessage, Dictionary<string, string>? tags = null)
     {
         var client = _httpClientFactory.CreateClient();
@@ -44,7 +45,6 @@ internal class GrafanaCloudService : IGrafanaCloudService
         allTags["level"] = "info";
         allTags["deployment_environment"] = "uat";
 
-
         var request = new LokiLogPublishRequest
         {
             streams = new[]
@@ -70,7 +70,6 @@ internal class GrafanaCloudService : IGrafanaCloudService
 
         if (response.IsSuccessStatusCode)
         {
-
             var c = await response.Content.ReadAsStringAsync();
             "Loki log published successfully.".WriteLine();
             Console.WriteLine(c);

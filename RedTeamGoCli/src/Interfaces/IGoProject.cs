@@ -1,6 +1,5 @@
 ﻿namespace RedTeamGoCli.Interfaces;
 
-
 /// <summary>
 /// Base interface for Go project settings.
 /// </summary>
@@ -25,7 +24,6 @@ public interface IGoRemoteLogProject : IGoAutomaticPullRequestProject
 
     string LogFileExtension { get; }
 }
-
 
 public interface IGoRemoteServiceProject : IGoProject
 {

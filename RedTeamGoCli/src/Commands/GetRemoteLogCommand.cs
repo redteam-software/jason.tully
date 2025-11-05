@@ -5,7 +5,11 @@ public record GetRemoteLogParameters(
       [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
       string? logLevel = "none") : CommandParameters(logLevel);
 
-
+/// <summary>
+/// Retrieves and downloads remote log files from Laravel Go applications via SSH.
+/// Requires a valid Go Laravel Project with remote log configuration and an SSH host
+/// configured in ~/.ssh/config file.
+/// </summary>
 [SubCommand(SubCommandLogs.SubCommandName, SubCommandLogs.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandLogs.SubCommandName,
@@ -21,6 +25,7 @@ public class GetRemoteLogCommand : ICommand<GetRemoteLogParameters>
         _sSHLogService = sSHLogService;
         _goProjectFactory = goProjectFactory;
     }
+
     public Task RunAsync(GetRemoteLogParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
         var result = Task.CompletedTask;
@@ -42,6 +47,5 @@ public class GetRemoteLogCommand : ICommand<GetRemoteLogParameters>
         $"Downloaded Log {response.TextValue(true)}".WriteLine();
 
         return result;
-
     }
 }

@@ -3,7 +3,6 @@ using System.Text;
 
 namespace RedTeamGoCli.Services;
 
-
 [RegisterSingleton]
 [RegisterScoped<IRemoteService>(Duplicate = DuplicateStrategy.Append, ServiceKey = "go-production-v5")]
 [RegisterScoped<IRemoteService>(Duplicate = DuplicateStrategy.Append, ServiceKey = "go-production-v4")]
@@ -23,12 +22,10 @@ public class SshService : ISshService, IRemoteService
 
     public void Dispose()
     {
-
     }
 
     public Task DownloadRemoteFile(string remotePath, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
     {
-
         var outputPath = Path.Combine(Environment.CurrentDirectory, destination);
         $"Downloading log {remotePath.TextValue()} from {remoteProject.Host.Success()}:{outputPath}".WriteLine();
         var response = _shell.Invoke($"scp {remoteProject.Host}:{remotePath} {outputPath}");
@@ -40,11 +37,8 @@ public class SshService : ISshService, IRemoteService
         return Task.CompletedTask;
     }
 
-
-
     public string GetRemoteLog(IGoRemoteLogProject project)
     {
-
         var logName = $"{project.LogFilePrefix}{DateTime.Now.Year}-{DateTime.Now.Month.ToString("D2")}-{DateTime.Now.Day.ToString("D2")}{project.LogFileExtension}";
 
         $"Downloading log {logName.TextValue()} from {project.Host.Success()}:{project.RemoteLogPath.TextValue()}".WriteLine();
@@ -62,10 +56,8 @@ public class SshService : ISshService, IRemoteService
         return Task.FromResult(true);
     }
 
-
     public async Task<UploadStatus> UploadRemoteFile(SourceFile source, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
     {
-
         destination = destination.Replace("\\", "/");
 
         var correlationId = source.RelativePath.ToLower();
@@ -83,7 +75,6 @@ public class SshService : ISshService, IRemoteService
             {
                 status = _shell.Invoke($"ssh {remoteProject.Host}  sudo mv /tmp/{Path.GetFileName(source.LocalPath)} {destination}");
             }
-
 
             if (!status.CompletedSuccessfully)
             {
@@ -105,5 +96,4 @@ public class SshService : ISshService, IRemoteService
             return new UploadStatus(false, ex.Message);
         }
     }
-
 }

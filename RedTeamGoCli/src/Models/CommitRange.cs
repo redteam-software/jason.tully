@@ -13,11 +13,8 @@ public record CommitRange(string HashStart, string? HashEnd)
 
     public override string ToString()
     {
-
-
         if (!string.IsNullOrWhiteSpace(HashStart))
         {
-
             if (!string.IsNullOrWhiteSpace(HashEnd))
             {
                 return $"Commits From: {HashStart.Information()} To: {HashEnd.Information()}";

@@ -14,6 +14,11 @@ public record CherryPickParameters(
       [Option(Common.Interactive, Description = Common.InteractiveDescription)] bool? interactive = null,
       string? logLevel = "none") : CommandParameters(logLevel);
 
+/// <summary>
+/// Cherry-picks commits from a specific author within a given commit or date range, applying each commit individually
+/// while excluding merge commits. Supports both automated mode (applies all commits) and interactive mode
+/// (allows manual selection via UI). Displays progress table with commit details and application status.
+/// </summary>
 [SubCommand(SubCommandGit.SubCommandName, SubCommandGit.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandGit.SubCommandName,
@@ -27,7 +32,6 @@ public class CherryPickCommand : ICommand<CherryPickParameters>
     {
         _gitService = gitService;
     }
-
 
     public async Task RunAsync(CherryPickParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
@@ -44,7 +48,6 @@ public class CherryPickCommand : ICommand<CherryPickParameters>
         {
             await _RunAsync(args, commandContext, cancellationToken);
         }
-
     }
 
     private async Task _RunAsync(CherryPickParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
@@ -59,8 +62,6 @@ public class CherryPickCommand : ICommand<CherryPickParameters>
         """;
 
         message.WriteLine();
-
-
 
         var commitsByAuthor = _gitService.SearchCommitsByAuthor(
             args.author,
@@ -119,15 +120,12 @@ public class CherryPickCommand : ICommand<CherryPickParameters>
 
         message.WriteLine();
 
-
-
         var commitsByAuthor = _gitService.SearchCommitsByAuthor(
             args.author,
             commitRange,
             dateRange,
             GitLogFormatString.CommitInfo,
               new GitLogSearchFlags(false, true, true, args.all ?? false));
-
 
         var commits = AnsiConsole
             .Prompt(new MultiSelectionPrompt<string>()

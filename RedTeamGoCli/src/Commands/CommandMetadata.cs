@@ -1,12 +1,12 @@
 ﻿namespace RedTeamGoCli.Commands;
 
-
 public static class CommandMetadata
 {
     public static class SubCommandUser
     {
         public const string SubCommandName = "user";
         public const string SubCommandDescription = "A collection of user related commands";
+
         public static string Format()
         {
             return $"{SubCommandName} - {SubCommandDescription}";
@@ -16,45 +16,52 @@ public static class CommandMetadata
         {
             public const string CommandName = "unified-login-signup";
             public const string CommandDescription = "Sends an invitation to unified login for an email.";
+
             public static string Format()
             {
                 return $"{CommandName} - {CommandDescription}";
             }
         }
-
     }
 
     public static class SubCommandConfig
     {
         public const string SubCommandName = "config";
         public const string SubCommandDescription = "A collection of config related commands";
+
         public static string Format()
         {
             return $"{SubCommandName} - {SubCommandDescription}";
         }
+
         public static class CommandSshConfigsList
         {
             public const string CommandName = "ssh-config-list";
             public const string CommandDescription = "lists all configured hosts in .ssh/config";
+
             public static string Format()
             {
                 return $"{CommandName} - {CommandDescription}";
             }
         }
+
         public static class CommandSshConfigsAdd
         {
             public const string CommandName = "ssh-config-list";
             public const string CommandDescription = "lists all configured hosts in .ssh/config";
+
             public static string Format()
             {
                 return $"{CommandName} - {CommandDescription}";
             }
         }
     }
+
     public static class SubCommandLogs
     {
         public const string SubCommandName = "logs";
         public const string SubCommandDescription = "A collection of logs related commands";
+
         public static string Format()
         {
             return $"{SubCommandName} - {SubCommandDescription}";
@@ -70,6 +77,7 @@ public static class CommandMetadata
                 return $"{CommandName} - {CommandDescription}";
             }
         }
+
         public static class CommandWriteLokiLog
         {
             public const string CommandName = "loki";
@@ -80,16 +88,18 @@ public static class CommandMetadata
                 return $"{CommandName} - {CommandDescription}";
             }
         }
-
     }
+
     public static class SubCommandGit
     {
         public const string SubCommandName = "git";
         public const string SubCommandDescription = "A collection of git related commands.  --help for a list of all sub-commands.";
+
         public static string Format()
         {
             return $"{SubCommandName} - {SubCommandDescription}";
         }
+
         public static class CommandCherryPick
         {
             public const string CommandName = "cherry-pick";
@@ -100,6 +110,7 @@ public static class CommandMetadata
                 return $"{CommandName} - {CommandDescription}";
             }
         }
+
         public static class CommandListChanges
         {
             public const string CommandName = "list-changes";
@@ -115,6 +126,7 @@ public static class CommandMetadata
         {
             public const string CommandName = "list-prs";
             public const string CommandDescription = "Lists pull requests created by the specified author across all Go projects.";
+
             public static string Format()
             {
                 return $"{CommandName} - {CommandDescription}";
@@ -137,10 +149,12 @@ public static class CommandMetadata
     {
         public const string SubCommandName = "deploy";
         public const string SubCommandDescription = "A collection of deployment related commands. Use --help to list all subcommands";
+
         public static string Format()
         {
             return $"{SubCommandName} - {SubCommandDescription}";
         }
+
         public static class CommandGoSync
         {
             public const string CommandName = "go-sync";
@@ -153,6 +167,7 @@ public static class CommandMetadata
         }
     }
 }
+
 public static class CommandParameterMetdata
 {
     public static class Common
@@ -181,7 +196,4 @@ public static class CommandParameterMetdata
         public const string Interactive = "interactive";
         public const string InteractiveDescription = "Whether to run in interactive mode.";
     }
-
-
-
 }

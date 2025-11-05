@@ -14,6 +14,11 @@ public record ListChangesParameters(
       [Option("output", Description = "the output display of data.  [fileName|brief|full")] string? output = "fileName",
         string? logLevel = "none") : CommandParameters(logLevel);
 
+/// <summary>
+/// Generates a comprehensive list of file changes made by a specific author within a commit or date range.
+/// Supports multiple output formats: fileName (paths only), brief (commit table), or full (tree view with details).
+/// Provides statistics on distinct and total file changes. Does not include actual diffs, only file names.
+/// </summary>
 [SubCommand(SubCommandGit.SubCommandName, SubCommandGit.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandGit.SubCommandName,
@@ -27,6 +32,7 @@ public class ListChangesCommand : ICommand<ListChangesParameters>
     {
         _gitService = gitService;
     }
+
     public async Task RunAsync(ListChangesParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
         if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
@@ -54,11 +60,6 @@ public class ListChangesCommand : ICommand<ListChangesParameters>
             GitLogFormatString.CommitInfo,
             new GitLogSearchFlags(true, true, true, args.all ?? false));
 
-
-
-
-
-
         var table = new Table().Expand();
         IRenderable renderable = table;
         var display = args.output ?? "fileName";
@@ -80,31 +81,24 @@ public class ListChangesCommand : ICommand<ListChangesParameters>
         }
         else if (display == "brief")
         {
-
             table.AddColumn("Commit Hash", c =>
             {
                 c.Width = 64;
             });
             table.AddColumn("Branch", c =>
             {
-
             });
             table.AddColumn("Date");
 
             foreach (var commit in commitsByAuthor)
             {
-
                 table.AddRow($"{commit.Hash!.Success()}", $"{commit.Branch}", $"{commit.Date.DateTimeValue()}");
-
-
             }
         }
         else if (display == "full")
         {
-
             var tree = new Tree("Commit Overview");
             renderable = tree;
-
 
             //table.Expand();
             //table.AddColumn("Commit Hash");
@@ -128,7 +122,6 @@ public class ListChangesCommand : ICommand<ListChangesParameters>
             }
         }
 
-
         var distinctChanges = commitsByAuthor
         .SelectMany(c => c.ChangedFiles!)
         .Where(m => !string.IsNullOrWhiteSpace(Path.GetExtension(m)) && IsValidPath(m))
@@ -143,26 +136,10 @@ public class ListChangesCommand : ICommand<ListChangesParameters>
         $"Total Changes: {totalChanges.NumericValue()}".WriteLine();
 
         await Task.Delay(100);
-
-
     }
 
-
-
-    static bool IsValidPath(string path)
+    private static bool IsValidPath(string path)
     {         // Check for invalid characters
         return path.Contains("\\") || path.Contains("/");
     }
-
-
-
-
-
-
-
-
-
 }
-
-
-

@@ -117,3 +117,4 @@ D:\Development\RedTeam\jason.tully\RedTeamGoCli\src\obj\Release\net9.0\rtgo.pdb
 D:\Development\RedTeam\jason.tully\RedTeamGoCli\src\obj\Release\net9.0\ref\rtgo.dll
 D:\Development\RedTeam\jason.tully\RedTeamGoCli\src\bin\Release\net9.0\MoreLinq.dll
 D:\Development\RedTeam\jason.tully\RedTeamGoCli\src\bin\Release\net9.0\appsettings.json
+D:\Development\RedTeam\jason.tully\RedTeamGoCli\src\bin\Release\net9.0\Newtonsoft.Json.dll

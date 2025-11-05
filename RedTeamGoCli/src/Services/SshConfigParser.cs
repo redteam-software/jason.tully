@@ -13,6 +13,7 @@ internal class SshConfigParser : ISshConfigParser
 
         return filePath;
     }
+
     public List<SshConfigEntry> Parse(string? filePath = null)
     {
         var entries = new List<SshConfigEntry>();
@@ -44,8 +45,6 @@ internal class SshConfigParser : ISshConfigParser
         }
 
         return entries;
-
-
     }
 
     public void Save(List<SshConfigEntry> entries, string? filePath = null)
@@ -64,7 +63,5 @@ internal class SshConfigParser : ISshConfigParser
 
             Console.WriteLine(writer.GetStringBuilder().ToString());
         }
-
-
     }
 }

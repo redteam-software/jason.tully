@@ -2,10 +2,12 @@
 using System.Text.Json;
 
 namespace RedTeamGoCli.Services;
+
 [RegisterSingleton<IGitHubCli>]
 public class GitHubCli : IGitHubCli
 {
     private readonly IShell _shell;
+
     public GitHubCli(IShell shell)
     {
         _shell = shell;
@@ -19,7 +21,6 @@ public class GitHubCli : IGitHubCli
 
         if (prResponse.ExitCode == 0)
         {
-
             if (autoMerge)
             {
                 return await MergePullRequest();
@@ -28,13 +29,9 @@ public class GitHubCli : IGitHubCli
         }
         else
         {
-
             return GitHubCliResult.Error($"Failed to create PR from {sourceBranch} to {targetBranch}");
         }
     }
-
-
-
 
     public string? GetCurrentUser()
     {
@@ -89,7 +86,7 @@ public class GitHubCli : IGitHubCli
         try
         {
             await Task.Delay(1500); // Wait for a moment to ensure the PR is created before attempting to merge
-                                    //gh pr merge --auto --merge  
+                                    //gh pr merge --auto --merge
             var mergeResponse = _shell.InvokeCommand(new ShellCommand("gh", null, "pr", "merge", "--auto", "--merge"));
 
             if (mergeResponse.ExitCode == 0)
@@ -98,13 +95,11 @@ public class GitHubCli : IGitHubCli
             }
             else
             {
-
                 return GitHubCliResult.Error("Failed to set PR to auto merge");
             }
         }
         catch (Exception ex)
         {
-
             return GitHubCliResult.Error($"Error during auto-merge process: {ex.Message}");
         }
     }
@@ -140,10 +135,8 @@ public class GitHubCli : IGitHubCli
                                 {
                                     result.AddRange(results);
                                 }
-
                             }
                         }
-
 
                         if (result.All(x => x.status == "completed"))
                         {
@@ -159,12 +152,10 @@ public class GitHubCli : IGitHubCli
                     }
                     catch (Exception ex)
                     {
-
                         task.PostTaskMessage(new RedTeam.Extensions.Console.Models.ProgressTaskMessage($"Error checking action status: {ex.Message}", 500, ""));
                         await Task.Delay(1000);
                         isSuccess = false;
                     }
-
                 }
             }
             catch (Exception)
@@ -176,7 +167,6 @@ public class GitHubCli : IGitHubCli
         }
         catch (Exception ex)
         {
-
             return GitHubCliResult.Error($"Error during auto-merge process: {ex.Message}");
         }
     }
@@ -190,5 +180,4 @@ public class GitHubCli : IGitHubCli
         public string? status { get; set; }
         public string? workflowName { get; set; }
     }
-
 }

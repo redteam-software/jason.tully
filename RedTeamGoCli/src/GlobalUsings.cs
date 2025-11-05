@@ -5,7 +5,6 @@ global using RedTeam.Extensions.Console;
 global using RedTeam.Extensions.Console.Attributes;
 global using RedTeam.Extensions.Console.Commands;
 global using RedTeam.Extensions.Console.ExtensionMethods;
-global using RedTeamGoCli.Commands;
 global using RedTeamGoCli.Interfaces;
 global using RedTeamGoCli.Models;
 global using RedTeamGoCli.Services;

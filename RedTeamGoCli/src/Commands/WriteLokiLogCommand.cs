@@ -6,7 +6,11 @@ public record WriteLokiLogParameters(
       [Option("tags", Description = "tags to include with the log message.  A comma delimited list of key=value pairs.")] string? tags = null,
       string? logLevel = "none") : CommandParameters(logLevel);
 
-
+/// <summary>
+/// Sends log messages to Grafana Cloud Loki for centralized logging and monitoring.
+/// Supports optional tags as key-value pairs (comma-delimited) for log categorization and filtering.
+/// Integrates with Grafana Cloud service for real-time log aggregation.
+/// </summary>
 [SubCommand(SubCommandLogs.SubCommandName, SubCommandLogs.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandLogs.SubCommandName,
@@ -20,9 +24,9 @@ public class WriteLokiLogCommand : ICommand<WriteLokiLogParameters>
     {
         _grafanaCloudService = grafanaCloudService;
     }
+
     public async Task RunAsync(WriteLokiLogParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
-
         Dictionary<string, string> logTags = new Dictionary<string, string>();
 
         if (!string.IsNullOrWhiteSpace(args.tags))
@@ -38,6 +42,5 @@ public class WriteLokiLogCommand : ICommand<WriteLokiLogParameters>
             }
         }
         await _grafanaCloudService.PostLokiLogMessageAsync(args.message, logTags);
-
     }
 }

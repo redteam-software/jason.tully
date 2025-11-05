@@ -69,7 +69,6 @@ public class RedTeamPlatformService : IRedTeamPlatformService
         return client;
     }
 
-
     public async Task SignupAsync(string accessToken, string email, string applicationName)
     {
         var client = _httpClientFactory.CreateClient();
@@ -112,8 +111,6 @@ public class RedTeamPlatformService : IRedTeamPlatformService
             Console.WriteLine(responseString);
         }
     }
-
-
 
     public class SignupResponse
     {

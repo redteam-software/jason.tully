@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("rtgo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da211ee7368a93c54021c4652f80bdc0e3f0761d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9fd7de722884e99061f64b60b7c3fd5328821df")]
 [assembly: System.Reflection.AssemblyProductAttribute("rtgo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("rtgo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

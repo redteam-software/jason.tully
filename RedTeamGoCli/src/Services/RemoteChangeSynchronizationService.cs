@@ -10,7 +10,6 @@ public class RemoteChangeSynchronizationService : IRemoteChangeSynchronizationSe
     private readonly FileChangeChannel _fileChangeChannel;
     private readonly IServiceProvider _serviceProvider;
 
-
     public RemoteChangeSynchronizationService(FileChangeChannel fileChangeChannel, IServiceProvider serviceProvider)
     {
         _fileChangeChannel = fileChangeChannel;
@@ -19,7 +18,6 @@ public class RemoteChangeSynchronizationService : IRemoteChangeSynchronizationSe
 
     public async Task StartAsync(SynchronizationParameters parameters, INotificationService notificationService, CancellationToken cancellationToken)
     {
-
         var target = _serviceProvider.GetRequiredKeyedService<IRemoteService>(parameters.RemoteTargetProject.Name);
 
         if (!await target.Initialize(parameters.RemoteTargetProject, notificationService))
@@ -27,7 +25,6 @@ public class RemoteChangeSynchronizationService : IRemoteChangeSynchronizationSe
             await notificationService.NotifyAsync("Failed to initialize remote target".Error());
             return;
         }
-
 
         await notificationService.NotifyAsync(new Notification(Guid.NewGuid(), $"Batch Size:{parameters.BatchSize.NumericValue()}.  Debounce (secs): {parameters.DebounceSeconds.NumericValue()}"));
 
@@ -39,7 +36,6 @@ public class RemoteChangeSynchronizationService : IRemoteChangeSynchronizationSe
                 var correlationId = latest.FilePath.ToLower();
                 var relative = latest.FilePath.Replace(Environment.CurrentDirectory, string.Empty);
 
-
                 var remotePath = BuildRemotePath(parameters.RemoteTargetProject.RemoteDirectory, relative);
                 if (latest.ChageType == ChageType.Delete)
                 {
@@ -47,14 +43,11 @@ public class RemoteChangeSynchronizationService : IRemoteChangeSynchronizationSe
                 }
                 else if (File.Exists(latest.FilePath))
                 {
-
                     await target.UploadRemoteFile(new(latest.FilePath, relative, await ReadFileWithRetryAsync(latest.FilePath, 3, 200, cancellationToken)),
                          remotePath, parameters.RemoteTargetProject, notificationService);
-
                 }
             }
         }
-
     }
 
     private static string BuildRemotePath(string remoteDirectory, string relativePath)

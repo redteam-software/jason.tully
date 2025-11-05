@@ -5,6 +5,11 @@ public record ListPullRequestsParameters(
      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
       string? logLevel = "none") : CommandParameters(logLevel);
 
+/// <summary>
+/// Discovers all Go projects within a directory tree and retrieves their pull requests via GitHub CLI.
+/// Displays a consolidated table view showing project name, PR title, state, age, and URL.
+/// Automatically matches directory names with registered Go project configurations.
+/// </summary>
 [SubCommand(SubCommandGit.SubCommandName, SubCommandGit.SubCommandDescription)]
 [SubCommandHandler(
    SubCommandGit.SubCommandName,
@@ -21,17 +26,14 @@ public class ListPullRequestsCommand : ICommand<ListPullRequestsParameters>
         _goProjects = goProjects;
     }
 
-
     public async Task RunAsync(ListPullRequestsParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
-
         $"Getting Pull Requests for Go Projects {_goProjects.Count().NumericValue()}".WriteLine();
 
         if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
         {
             Environment.CurrentDirectory = args.path;
         }
-
 
         $"Searching {Environment.CurrentDirectory} for go projects".WriteLine();
 
@@ -64,9 +66,7 @@ public class ListPullRequestsCommand : ICommand<ListPullRequestsParameters>
             }
         }
 
-
         var table = new Table().Expand().Border(TableBorder.Rounded);
-
 
         table.AddColumns("Project", "Title", "State", "Age", "URL");
 
@@ -87,8 +87,5 @@ public class ListPullRequestsCommand : ICommand<ListPullRequestsParameters>
         }
 
         AnsiConsole.Write(table);
-
     }
-
-
 }

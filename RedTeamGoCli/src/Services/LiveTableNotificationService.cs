@@ -35,9 +35,7 @@ public class LiveTableNotificationService : INotificationService
 
             var eventTime = notification.EventTime ?? DateTime.Now;
 
-
             _table.AddRow(new Markup(notification.Message), new Markup(eventTime.ToString()));
-
 
             this._liveDisplayContext.Refresh();
         }

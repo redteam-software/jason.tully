@@ -11,5 +11,4 @@ public record GitHubCliResult(bool Status, string? Message = null)
 
 public record GitHubCliResult<T>(bool Status, List<T>? Data = null)
 {
-
 }

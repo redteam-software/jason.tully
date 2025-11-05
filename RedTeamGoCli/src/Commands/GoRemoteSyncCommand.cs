@@ -6,6 +6,11 @@ public record GoRemoteSyncParameters(
    [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
   string? logLevel = "error") : CommandParameters(logLevel);
 
+/// <summary>
+/// Monitors the local file system for changes and synchronizes them in real-time with a remote UAT instance.
+/// Uses batching and debouncing to optimize network operations. Displays live progress in a table format
+/// showing sync activity and timestamps. Requires a valid Go Project with remote service configuration.
+/// </summary>
 [SubCommand(SubCommandDeploy.SubCommandName, SubCommandDeploy.SubCommandDescription)]
 [SubCommandHandler(
     SubCommandDeploy.SubCommandName,
@@ -13,27 +18,22 @@ public record GoRemoteSyncParameters(
    SubCommandDeploy.CommandGoSync.CommandDescription)]
 public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
 {
-
     private readonly IFileSystemChangeMonitor _fileSystemChangeMonitor;
     private readonly IRemoteChangeSynchronizationService _remoteChangeSynchronizationService;
     private readonly IGoProjectFactory _goProjectFactory;
-
 
     public GoRemoteSyncCommand(
         IFileSystemChangeMonitor fileSystemChangeMonitor,
         IRemoteChangeSynchronizationService remoteChangeSynchronizationService,
         IGoProjectFactory goProjectFactory)
     {
-
         _fileSystemChangeMonitor = fileSystemChangeMonitor;
         _remoteChangeSynchronizationService = remoteChangeSynchronizationService;
         _goProjectFactory = goProjectFactory;
-
     }
+
     public async Task RunAsync(GoRemoteSyncParameters args, CommandContext commandContext, CancellationToken cancellationToken = default)
     {
-
-
         SubCommandDeploy.CommandGoSync.Format().WriteSubTitle(false);
         if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
         {
@@ -46,7 +46,6 @@ public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
             $"{Environment.CurrentDirectory.TextValue(true).Error()} is not a valid Go Project".WriteLine();
             return;
         }
-
 
         var table = new Table().Expand().HideHeaders().HideRowSeparators().NoBorder();
 
@@ -69,15 +68,8 @@ public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
                 }
                 catch (OperationCanceledException)
                 {
-                    //swallow it.  
+                    //swallow it.
                 }
             });
-
     }
-
-
-
 }
-
-
-

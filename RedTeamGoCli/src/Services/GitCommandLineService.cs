@@ -8,7 +8,6 @@ namespace RedTeamGit.Services;
 [RegisterSingleton<IGitService>]
 internal class GitCommandLineService : IGitService
 {
-
     private static readonly string _regExPattern = @"^commit=(?<commit>[a-f0-9]{40})\|author=(?<author>[^|]+)\|email=(?<email>[^|]+)\|date=(?<date>[\d\-: ]+ [\+\-]\d{4})\|message=(?<message>.+)\|branch=(?<branch>.*)$";
     private static readonly Regex _groupingKey = new(_regExPattern, RegexOptions.Compiled);
     private readonly IShell _shell;
@@ -98,7 +97,6 @@ internal class GitCommandLineService : IGitService
 
         var (fileNameOnly, removeDuplicates, restrictToCurrentBranch, searchAccrossAllBranches) = gitLogSearchFlags;
 
-
         List<ShellCommandArgument> args = [
             "log",
             "--no-merges",
@@ -108,8 +106,6 @@ internal class GitCommandLineService : IGitService
             "--decorate",
             $"--committer=\"{author}\""
             ];
-
-
 
         if (fileNameOnly)
         {
@@ -145,10 +141,7 @@ internal class GitCommandLineService : IGitService
             }
         }
 
-
-
         var settings = new ShellCommandOptions(StringChannel.Unbounded(), StringChannel.Unbounded(), UsePowershell: usePowershell);
-
 
         var command = new ShellCommand("git", settings, args.ToArray());
 
@@ -213,8 +206,6 @@ internal class GitCommandLineService : IGitService
 
         if (commitStack.Any())
         {
-
-
             var finishedCommit = commitStack.Pop();
             commitInfos.Add(finishedCommit);
         }

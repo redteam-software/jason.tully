@@ -25,7 +25,6 @@
       "commandLineArgs": "deploy go-sync  --path D:\\Development\\RedTeam\\Go\\go-production-v4"
     },
 
-
     "Get Laravel Log v5": {
       "commandName": "Project",
       "commandLineArgs": "logs  remote  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v5"

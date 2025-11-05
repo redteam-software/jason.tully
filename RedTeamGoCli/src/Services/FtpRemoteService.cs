@@ -8,9 +8,9 @@ namespace RedTeamGoCli.Services;
 [RegisterScoped<IRemoteService>(Duplicate = DuplicateStrategy.Append, ServiceKey = "go-manager")]
 public class FtpRemoteService : IRemoteService
 {
-
     private FtpClient? _client = null;
     private bool _disposedValue;
+
     public Task DeleteRemoteFile(string path, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
     {
         //not implemented
@@ -42,7 +42,6 @@ public class FtpRemoteService : IRemoteService
             await notificationService.NotifyAsync($"Connecting to FTP Server {remoteProject.Host}@{remoteProject.RemoteDirectory}");
             _client.Connect();
 
-
             await notificationService.NotifyAsync($"Connection Established".Success());
             return true;
         }
@@ -61,7 +60,6 @@ public class FtpRemoteService : IRemoteService
         await notificationService.NotifyAsync(new Notification(correlationId, $"Uploading {source.RelativePath.TextValue(true)}", "FTPUpload", DateTime.Now));
         try
         {
-
             var status = _client.UploadBytes(source.Content, destination,
                      FtpRemoteExists.OverwriteInPlace,
                      false);
@@ -114,6 +112,7 @@ public class FtpRemoteService : IRemoteService
             return parameters.Password;
         }
     }
+
     // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
     // ~FtpRemoteTarget()
     // {

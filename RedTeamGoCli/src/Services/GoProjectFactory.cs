@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 
 namespace RedTeamGoCli.Services;
+
 [RegisterSingleton]
 public class GoProjectFactory : IGoProjectFactory
 {
@@ -10,10 +11,10 @@ public class GoProjectFactory : IGoProjectFactory
     {
         _serviceProvider = serviceProvider;
     }
+
     [RegisterServices]
     public static IServiceCollection AddGoProjectFactory(IServiceCollection services)
     {
-
         var configurationPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".secrets", "rtgo.json");
 
         if (!Path.Exists(configurationPath))
@@ -48,12 +49,13 @@ public class GoProjectFactory : IGoProjectFactory
         services.AddSingleton(configuration);
 
         return services;
-
     }
+
     public IGoProject? GetProjectFromDirectory(string projectDirectory)
     {
         return GetProjectFromDirectory<IGoProject>(projectDirectory);
     }
+
     public T? GetProjectFromDirectory<T>(string projectDirectory) where T : IGoProject
     {
         var dir = new DirectoryInfo(projectDirectory);
@@ -70,6 +72,5 @@ public class GoProjectFactory : IGoProjectFactory
         }
 
         return default;
-
     }
 }

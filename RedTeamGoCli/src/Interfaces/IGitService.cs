@@ -7,6 +7,7 @@ public interface IGitService
     public string? GetCurrentBranchName();
 
     public List<Change> GetCurrentChanges();
+
     public IReadOnlyList<CommitInfo> SearchCommitsByAuthor(
         string author,
         CommitRange? commitRange,
