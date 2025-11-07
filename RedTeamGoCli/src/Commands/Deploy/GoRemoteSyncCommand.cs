@@ -1,10 +1,12 @@
-namespace RedTeamGoCli.Commands;
+namespace RedTeamGoCli.Commands.Deploy;
 
 public record GoRemoteSyncParameters(
   [Option("batch", Description = "The number of file changes to batch before uploading. Default is 5")] int batch = 2,
   [Option("debounce", Description = "The time in seconds to wait before processing a batch. Default is 10 seconds")] int debounce = 3,
-   [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
-  string? logLevel = "error") : CommandParameters(logLevel);
+  [Option("timeout", Description = "Service will timeout and stop after a certain number of minutes.  The default is 10 minutes.  Pass 0 to disable.")] int timeout = 10,
+  string? path = null,
+  string? env = null,
+  string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Monitors the local file system for changes and synchronizes them in real-time with a remote UAT instance.
@@ -40,7 +42,14 @@ public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
             Environment.CurrentDirectory = args.path;
         }
 
-        var project = _goProjectFactory.GetProjectFromDirectory<IGoRemoteServiceProject>(Environment.CurrentDirectory);
+        ApplicationEnvironment applicationEnvironment = args.env;
+
+        if (applicationEnvironment.Value == "prod")
+        {
+            throw new InvalidOperationException("Change sync cannot be run in the production environment.");
+        }
+
+        var project = _goProjectFactory.GetProjectFromDirectory<IGoRemoteServiceProject>(args.env, Environment.CurrentDirectory);
         if (project == null)
         {
             $"{Environment.CurrentDirectory.TextValue(true).Error()} is not a valid Go Project".WriteLine();
@@ -55,6 +64,18 @@ public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
         // table.AddColumn("");
         table.AddEmptyRow();
 
+        CancellationToken linkedToken = cancellationToken;
+
+        if (args.timeout > 0)
+        {
+            $"Service will timeout after {args.timeout.NumericValue()} minutes.".WriteLine();
+            //auto cancels after 10 minutes.
+            var tenMinuteToken = new CancellationTokenSource(TimeSpan.FromMinutes(10));
+            using var linkedCts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, tenMinuteToken.Token);
+            linkedToken = linkedCts.Token;
+        }
+
+
         await AnsiConsole.Live(table)
             .StartAsync(async ctx =>
             {
@@ -63,8 +84,8 @@ public class GoRemoteSyncCommand : ICommand<GoRemoteSyncParameters>
                 try
                 {
                     await Task.WhenAll(
-                        _fileSystemChangeMonitor.MonitorAsync(Environment.CurrentDirectory, notificationService, cancellationToken),
-                        _remoteChangeSynchronizationService.StartAsync(parameters, notificationService, cancellationToken));
+                        _fileSystemChangeMonitor.MonitorAsync(Environment.CurrentDirectory, notificationService, linkedToken),
+                        _remoteChangeSynchronizationService.StartAsync(parameters, notificationService, linkedToken));
                 }
                 catch (OperationCanceledException)
                 {

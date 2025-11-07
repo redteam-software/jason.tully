@@ -1,9 +1,10 @@
-namespace RedTeamGoCli.Commands;
+namespace RedTeamGoCli.Commands.Git;
 
 public record AutomatedPullRequestParameters(
    [Option("target", Description = "The target branch to create the pull request against. If not specified, the default branch will be used.")] string? targetBranch,
-     [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
-   string? logLevel = "error") : CommandParameters(logLevel);
+  string? path = null,
+  string? env = null,
+  string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Automates the pull request workflow by creating a PR from the current branch to a target branch,
@@ -39,7 +40,14 @@ public class AutomatedPullRequestCommand : ICommand<AutomatedPullRequestParamete
             Environment.CurrentDirectory = args.path;
         }
 
-        var project = _goProjectFactory.GetProjectFromDirectory<IGoAutomaticPullRequestProject>(Environment.CurrentDirectory);
+        ApplicationEnvironment applicationEnvironment = args.env;
+
+        if (applicationEnvironment.Value == "prod")
+        {
+            throw new InvalidOperationException("Automated Pull Requests cannot be run in the production environment.");
+        }
+
+        var project = _goProjectFactory.GetProjectFromDirectory<IGoAutomaticPullRequestProject>(args.env, Environment.CurrentDirectory);
         if (project == null)
         {
             $"{Environment.CurrentDirectory.TextValue(true).Error()} is not a valid Go Laravel Project".WriteLine();

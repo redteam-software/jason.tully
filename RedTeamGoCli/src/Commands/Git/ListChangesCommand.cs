@@ -1,7 +1,7 @@
 using Spectre.Console.Rendering;
 using System.Text;
 
-namespace RedTeamGit.Commands;
+namespace RedTeamGoCli.Commands.Git;
 
 public record ListChangesParameters(
       [Option(Common.Author, Description = Common.AuthorDescription)] string author,
@@ -9,10 +9,11 @@ public record ListChangesParameters(
       [Option(Common.HashEnd, Description = Common.HashEndDescription)] string? commitEnd = null,
       [Option(Common.Since, Description = Common.SinceDescription)] string? since = null,
       [Option(Common.Until, Description = Common.UntilDescription)] string? until = null,
-      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
       [Option(Common.AllBranches, Description = Common.AllBranchesDescription)] bool? all = null,
       [Option("output", Description = "the output display of data.  [fileName|brief|full")] string? output = "fileName",
-        string? logLevel = "none") : CommandParameters(logLevel);
+        string? path = null,
+        string? env = null,
+        string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Generates a comprehensive list of file changes made by a specific author within a commit or date range.

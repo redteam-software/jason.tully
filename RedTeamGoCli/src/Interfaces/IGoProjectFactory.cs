@@ -2,7 +2,7 @@
 
 public interface IGoProjectFactory
 {
-    public IGoProject? GetProjectFromDirectory(string projectDirectory);
+    public IGoProject? GetProjectFromDirectory(ApplicationEnvironment env, string projectDirectory);
 
-    public T? GetProjectFromDirectory<T>(string projectDirectory) where T : IGoProject;
+    public T? GetProjectFromDirectory<T>(ApplicationEnvironment env, string projectDirectory) where T : IGoProject;
 }

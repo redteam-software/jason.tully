@@ -1,9 +1,10 @@
-namespace RedTeamGit.Commands;
+namespace RedTeamGoCli.Commands.Git;
 
 public record ListPullRequestsParameters(
 
-     [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
-      string? logLevel = "none") : CommandParameters(logLevel);
+  string? path = null,
+  string? env = null,
+  string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Discovers all Go projects within a directory tree and retrieves their pull requests via GitHub CLI.

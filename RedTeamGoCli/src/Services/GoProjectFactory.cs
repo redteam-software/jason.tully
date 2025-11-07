@@ -24,39 +24,56 @@ public class GoProjectFactory : IGoProjectFactory
 
         var json = File.ReadAllText(configurationPath);
 
-        var configuration = JsonSerializer.Deserialize<GoProjectConfiguration>(json)!;
+        var configuration = JsonSerializer.Deserialize<GoProjectEnvironmentConfiguration>(json)!;
 
-        //var goManager = new GoManager("go-manager", "Go Cold Fusion Manager Project", "go-manager", "PASKR.COM", "", "", "");
-        //var goProductionCf = new GoColdFusion("go-production-cf", "Go Cold Fusion  Project", "go-production-cf", "mdrive\\paskrcustomers\\uatcode", "", "", "");
-        // var laravel4 = new GoLaravel("go-production-v4", "Laravel 4 Project", "laravel4", "uatcode_v3", "/var/www/html/uatapp1.go.redteam.com/current/app/storage/logs", "gouat4", "laravel-");
-        //var laravel5 = new GoLaravel("go-production-v5", "Laravel 5 Project", "laravel5", "uat", "/var/www/html/uatapp.go.redteam.com/current/storage/logs/", "gouat5", "laravel-");
+        if (configuration == null)
+        {
+            throw new InvalidOperationException("Failed to deserialize Go project configuration.");
+        }
 
-        services.AddKeyedSingleton<IGoFtpProject>("go-manager", configuration.GoManager)
-                   .AddSingleton<IGoProject>(configuration.GoManager)
-                   .AddKeyedSingleton<IGoRemoteServiceProject>("go-manager", configuration.GoManager);
-        services.AddKeyedSingleton<IGoFtpProject>("go-production-cf", configuration.GoColdFusion)
-                   .AddSingleton<IGoProject>(configuration.GoColdFusion)
-                   .AddKeyedSingleton<IGoRemoteServiceProject>("go-production-cf", configuration.GoColdFusion);
-        services.AddKeyedSingleton<IGoAutomaticPullRequestProject>("go-production-v4", configuration.GoLaravel4)
-                    .AddSingleton<IGoProject>(configuration.GoLaravel4)
-                    .AddKeyedSingleton<IGoRemoteServiceProject>("go-production-v4", configuration.GoLaravel4)
-                    .AddKeyedSingleton<IGoRemoteLogProject>("go-production-v4", configuration.GoLaravel4);
-        services.AddKeyedSingleton<IGoAutomaticPullRequestProject>("go-production-v5", configuration.GoLaravel5)
-                   .AddSingleton<IGoProject>(configuration.GoLaravel5)
-                   .AddKeyedSingleton<IGoRemoteServiceProject>("go-production-v5", configuration.GoLaravel5)
-                   .AddKeyedSingleton<IGoRemoteLogProject>("go-production-v5", configuration.GoLaravel5);
 
-        services.AddSingleton(configuration);
+        services.AddKeyedSingleton("uat", (sp, key) => configuration.Uat);
+        services.AddKeyedSingleton("prod", (sp, key) => configuration.Prod);
+
+        RegisterForEnvironment(services, "uat", configuration.Uat);
+        RegisterForEnvironment(services, "prod", configuration.Prod);
 
         return services;
     }
-
-    public IGoProject? GetProjectFromDirectory(string projectDirectory)
+    private static void RegisterForEnvironment(IServiceCollection services, string env, GoProjectConfiguration configuration)
     {
-        return GetProjectFromDirectory<IGoProject>(projectDirectory);
+
+        var keyGoManager = $"{env}-go-manager";
+        var keyColdFusion = $"{env}-go-production-cf";
+        var keyLaravel4 = $"{env}-go-production-v4";
+        var keyLaravel5 = $"{env}-go-production-v5";
+
+
+        services.AddKeyedSingleton<IGoFtpProject>(keyGoManager, configuration.GoManager)
+                  .AddSingleton<IGoProject>(configuration.GoManager)
+                  .AddKeyedSingleton<IGoRemoteServiceProject>(keyGoManager, configuration.GoManager);
+
+        services.AddKeyedSingleton<IGoFtpProject>(keyColdFusion, configuration.GoColdFusion)
+                   .AddSingleton<IGoProject>(configuration.GoColdFusion)
+                   .AddKeyedSingleton<IGoRemoteServiceProject>(keyColdFusion, configuration.GoColdFusion);
+
+        services.AddKeyedSingleton<IGoAutomaticPullRequestProject>(keyLaravel4, configuration.GoLaravel4)
+                    .AddSingleton<IGoProject>(configuration.GoLaravel4)
+                    .AddKeyedSingleton<IGoRemoteServiceProject>(keyLaravel4, configuration.GoLaravel4)
+                    .AddKeyedSingleton<IGoRemoteLogProject>(keyLaravel4, configuration.GoLaravel4);
+
+        services.AddKeyedSingleton<IGoAutomaticPullRequestProject>(keyLaravel5, configuration.GoLaravel5)
+                   .AddSingleton<IGoProject>(configuration.GoLaravel5)
+                   .AddKeyedSingleton<IGoRemoteServiceProject>(keyLaravel5, configuration.GoLaravel5)
+                   .AddKeyedSingleton<IGoRemoteLogProject>(keyLaravel5, configuration.GoLaravel5);
     }
 
-    public T? GetProjectFromDirectory<T>(string projectDirectory) where T : IGoProject
+    public IGoProject? GetProjectFromDirectory(ApplicationEnvironment env, string projectDirectory)
+    {
+        return GetProjectFromDirectory<IGoProject>(env, projectDirectory);
+    }
+
+    public T? GetProjectFromDirectory<T>(ApplicationEnvironment env, string projectDirectory) where T : IGoProject
     {
         var dir = new DirectoryInfo(projectDirectory);
 
@@ -64,7 +81,7 @@ public class GoProjectFactory : IGoProjectFactory
 
         foreach (var segment in segments)
         {
-            var project = _serviceProvider.GetKeyedService<T>(segment);
+            var project = _serviceProvider.GetKeyedService<T>($"{env.Value}-{segment}");
             if (project != null)
             {
                 return project;

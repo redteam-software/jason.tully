@@ -39,6 +39,10 @@ public class LiveTableNotificationService : INotificationService
 
             this._liveDisplayContext.Refresh();
         }
+        catch
+        {
+            //swallow.
+        }
         finally
         {
             semaphore.Release();

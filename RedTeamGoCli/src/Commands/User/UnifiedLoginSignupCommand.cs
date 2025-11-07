@@ -1,9 +1,12 @@
-﻿namespace RedTeamGoCli.Commands;
+﻿namespace RedTeamGoCli.Commands.User;
 
 public record UnifiedLoginSignupParameters(
   [Option("email", Description = "The user email address.")] string email,
     [Option(Description = "the application name. default is go.")] string applicationName = "go",
- string? logLevel = "error") : CommandParameters(logLevel);
+
+        string? path = null,
+        string? env = null,
+        string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Sends a unified login invitation to a user's email address via the RedTeam Platform service.

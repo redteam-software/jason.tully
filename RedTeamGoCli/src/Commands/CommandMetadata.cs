@@ -77,6 +77,17 @@ public static class CommandMetadata
                 return $"{CommandName} - {CommandDescription}";
             }
         }
+        public static class CommanListRemoteLogs
+        {
+            public const string CommandName = "remote-list";
+            public const string CommandDescription = "Lists remote logs with an option to select and download a log.";
+
+            public static string Format()
+            {
+                return $"{CommandName} - {CommandDescription}";
+            }
+        }
+
 
         public static class CommandWriteLokiLog
         {
@@ -195,5 +206,8 @@ public static class CommandParameterMetdata
 
         public const string Interactive = "interactive";
         public const string InteractiveDescription = "Whether to run in interactive mode.";
+
+        public const string Environment = "env";
+        public const string EnvironmentDescription = "The environment to target.  E.g. uat, prod.  Default is uat";
     }
 }

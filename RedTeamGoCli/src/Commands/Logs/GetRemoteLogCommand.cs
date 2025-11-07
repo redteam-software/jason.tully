@@ -1,9 +1,12 @@
-﻿namespace RedTeamGoCli.Commands;
+﻿using RedTeamGoCli.Utilities;
+
+namespace RedTeamGoCli.Commands.Logs;
 
 public record GetRemoteLogParameters(
 
-      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
-      string? logLevel = "none") : CommandParameters(logLevel);
+        string? path = null,
+        string? env = null,
+        string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Retrieves and downloads remote log files from Laravel Go applications via SSH.
@@ -35,7 +38,7 @@ public class GetRemoteLogCommand : ICommand<GetRemoteLogParameters>
             Environment.CurrentDirectory = args.path;
         }
 
-        var project = _goProjectFactory.GetProjectFromDirectory<IGoRemoteLogProject>(Environment.CurrentDirectory);
+        var project = _goProjectFactory.GetProjectFromDirectory<IGoRemoteLogProject>(args.env, Environment.CurrentDirectory);
         if (project == null)
         {
             $"{Environment.CurrentDirectory.TextValue(true).Error()} is not a valid Go Laravel Project".WriteLine();
@@ -43,8 +46,16 @@ public class GetRemoteLogCommand : ICommand<GetRemoteLogParameters>
         }
 
         var response = _sSHLogService.GetRemoteLog(project);
+        if (File.Exists(response))
+        {
 
-        $"Downloaded Log {response.TextValue(true)}".WriteLine();
+            $"Downloaded Log {response.TextValue(true)}".WriteLine();
+            VsCodeUtility.OpenFile(response);
+        }
+        else
+        {
+            $"Failed to download log file.".WriteLine();
+        }
 
         return result;
     }

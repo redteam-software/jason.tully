@@ -1,10 +1,13 @@
-﻿namespace RedTeamGoCli.Commands;
+﻿namespace RedTeamGoCli.Commands.Logs;
 
 public record WriteLokiLogParameters(
 
       [Option("message", Description = "message to log")] string message,
       [Option("tags", Description = "tags to include with the log message.  A comma delimited list of key=value pairs.")] string? tags = null,
-      string? logLevel = "none") : CommandParameters(logLevel);
+
+        string? path = null,
+        string? env = null,
+        string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Sends log messages to Grafana Cloud Loki for centralized logging and monitoring.

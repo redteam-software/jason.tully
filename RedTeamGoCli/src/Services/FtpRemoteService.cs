@@ -24,9 +24,9 @@ public class FtpRemoteService : IRemoteService
         GC.SuppressFinalize(this);
     }
 
-    public Task DownloadRemoteFile(string remotePath, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
+    public Task<DownloadFileResult> DownloadRemoteFile(string remotePath, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService, bool format = false)
     {
-        throw new NotImplementedException();
+        return Task.FromResult(new DownloadFileResult("", ""));
     }
 
     public async Task<bool> Initialize(IGoRemoteServiceProject remoteProject, INotificationService notificationService)

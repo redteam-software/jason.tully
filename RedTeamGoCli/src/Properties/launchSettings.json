@@ -27,7 +27,7 @@
 
     "Get Laravel Log v5": {
       "commandName": "Project",
-      "commandLineArgs": "logs  remote  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v5"
+      "commandLineArgs": "logs  remote  --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v5 --env prod"
     },
     "Get Laravel Log v4": {
       "commandName": "Project",
@@ -40,6 +40,10 @@
     "List Open PRS": {
       "commandName": "Project",
       "commandLineArgs": "git  list-prs --path D:\\Development\\RedTeam\\Go\\all-go-projects"
+    },
+    "List Remote Logs v5": {
+      "commandName": "Project",
+      "commandLineArgs": "logs  remote-list --path D:\\Development\\RedTeam\\Go\\all-go-projects\\go-production-v5 --env prod"
     },
     "Publish Loki Log": {
       "commandName": "Project",

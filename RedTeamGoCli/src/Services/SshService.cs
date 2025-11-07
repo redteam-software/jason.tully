@@ -1,4 +1,6 @@
-﻿using RedTeam.Extensions.Console.ShellInterop;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using RedTeam.Extensions.Console.ShellInterop;
 using System.Text;
 
 namespace RedTeamGoCli.Services;
@@ -24,20 +26,25 @@ public class SshService : ISshService, IRemoteService
     {
     }
 
-    public Task DownloadRemoteFile(string remotePath, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
+    public Task<DownloadFileResult> DownloadRemoteFile(string remotePath, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService, bool format = false)
     {
+        DownloadFileResult? result = null;
         var outputPath = Path.Combine(Environment.CurrentDirectory, destination);
         $"Downloading log {remotePath.TextValue()} from {remoteProject.Host.Success()}:{outputPath}".WriteLine();
         var response = _shell.Invoke($"scp {remoteProject.Host}:{remotePath} {outputPath}");
         if (!response.CompletedSuccessfully)
         {
             response.StandardError?.WriteLine();
+            return Task.FromResult(new DownloadFileResult(string.Empty, response.StandardError));
         }
-
-        return Task.CompletedTask;
+        if (format)
+        {
+            FormatLogFile(outputPath);
+        }
+        return Task.FromResult(new DownloadFileResult(outputPath, response.StandardError));
     }
 
-    public string GetRemoteLog(IGoRemoteLogProject project)
+    public string GetRemoteLog(IGoRemoteLogProject project, bool format = true)
     {
         var logName = $"{project.LogFilePrefix}{DateTime.Now.Year}-{DateTime.Now.Month.ToString("D2")}-{DateTime.Now.Day.ToString("D2")}{project.LogFileExtension}";
 
@@ -47,13 +54,28 @@ public class SshService : ISshService, IRemoteService
         {
             response.StandardError?.WriteLine();
         }
-        return Path.Combine(Environment.CurrentDirectory, logName);
+        var logFile = Path.Combine(Environment.CurrentDirectory, logName);
+        if (format)
+        {
+            FormatLogFile(logFile);
+        }
+        return logFile;
     }
 
     public Task<bool> Initialize(IGoRemoteServiceProject remoteProject, INotificationService notificationService)
     {
         $"Initializing SSH configuration from .ssh/config for host".WriteLine();
         return Task.FromResult(true);
+    }
+
+    public List<string> ListRemoteLogCommand(IGoRemoteLogProject project)
+    {
+        var response = _shell.Invoke($"ssh {project.Host} ls {project.RemoteLogPath}");
+        if (!response.CompletedSuccessfully)
+        {
+            response.StandardError?.WriteLine();
+        }
+        return response.Result?.ToList() ?? new List<string>();
     }
 
     public async Task<UploadStatus> UploadRemoteFile(SourceFile source, string destination, IGoRemoteServiceProject remoteProject, INotificationService notificationService)
@@ -95,5 +117,36 @@ public class SshService : ISshService, IRemoteService
             await notificationService.NotifyAsync($"{sb.ToString().Error()} for file {destination}");
             return new UploadStatus(false, ex.Message);
         }
+    }
+
+    private void FormatLogFile(string path)
+    {
+        try
+        {
+            var arrayOfLogLines = new JArray();
+            using (var reader = new StreamReader(path))
+            {
+                string? line = null;
+
+
+
+                while ((line = reader.ReadLine()) != null)
+                {
+                    var jobject = JObject.Parse(line);
+
+                    arrayOfLogLines.Add(jobject);
+
+                }
+            }
+
+            var json = JsonConvert.SerializeObject(arrayOfLogLines, Formatting.Indented);
+
+            File.WriteAllText(path, json);
+        }
+        catch
+        {
+            //do nothing
+        }
+
     }
 }

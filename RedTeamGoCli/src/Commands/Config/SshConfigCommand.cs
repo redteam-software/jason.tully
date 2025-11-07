@@ -1,9 +1,10 @@
-﻿namespace RedTeamGoCli.Commands;
+﻿namespace RedTeamGoCli.Commands.Config;
 
 public record SshConfigParameters(
 
-      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
-      string? logLevel = "none") : CommandParameters(logLevel);
+    string? path = null,
+    string? env = null,
+    string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Parses and displays all configured SSH hosts from the ~/.ssh/config file.

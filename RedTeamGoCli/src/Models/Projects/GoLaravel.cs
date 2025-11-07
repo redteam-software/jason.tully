@@ -8,6 +8,7 @@ public record GoLaravel(string ProjectDirectory,
     string LogFilePrefix,
     string RemoteDirectory,
     string LogFileExtension = ".log"
-    ) : IGoProject, IGoRemoteLogProject, IGoRemoteServiceProject
+
+    ) : IGoProject, IGoRemoteLogProject, IGoRemoteServiceProject, IGoAutomaticPullRequestProject
 {
 }

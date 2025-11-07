@@ -2,8 +2,19 @@
 
 namespace RedTeamGoCli.Models;
 
+public class GoProjectEnvironmentConfiguration
+{
+
+    public GoProjectConfiguration Uat { get; set; } = null!;
+    public GoProjectConfiguration Prod { get; set; } = null!;
+
+
+
+}
+
 public class GoProjectConfiguration
 {
+
     public GrafanaCloudConfiguration GrafanaCloudConfiguration { get; set; } = null!;
     public PlatformConfiguration PlatformConfiguration { get; set; } = null!;
     public GoManager GoManager { get; set; } = null!;

@@ -1,6 +1,6 @@
 using RedTeam.Extensions.Console.ShellInterop;
 
-namespace RedTeamGit.Commands;
+namespace RedTeamGoCli.Commands.Git;
 
 public record CherryPickParameters(
 
@@ -9,10 +9,11 @@ public record CherryPickParameters(
       [Option(Common.HashEnd, Description = Common.HashEndDescription)] string? commitEnd = null,
       [Option(Common.Since, Description = Common.SinceDescription)] string? since = null,
       [Option(Common.Until, Description = Common.UntilDescription)] string? until = null,
-      [Option(Common.Path, Description = Common.PathDescription)] string? path = null,
       [Option(Common.AllBranches, Description = Common.AllBranchesDescription)] bool? all = null,
       [Option(Common.Interactive, Description = Common.InteractiveDescription)] bool? interactive = null,
-      string? logLevel = "none") : CommandParameters(logLevel);
+        string? path = null,
+        string? env = null,
+        string? logLevel = "error") : BaseCommandParameters(path, env, logLevel);
 
 /// <summary>
 /// Cherry-picks commits from a specific author within a given commit or date range, applying each commit individually
@@ -38,6 +39,13 @@ public class CherryPickCommand : ICommand<CherryPickParameters>
         if (!string.IsNullOrEmpty(args.path) && Directory.Exists(args.path))
         {
             Environment.CurrentDirectory = args.path;
+        }
+
+        ApplicationEnvironment applicationEnvironment = args.env;
+
+        if (applicationEnvironment.Value == "prod")
+        {
+            throw new InvalidOperationException("Cherry picking  cannot be run in the production environment.");
         }
 
         if (args.interactive == true)
